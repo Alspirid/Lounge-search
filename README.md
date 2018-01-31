@@ -22,3 +22,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+travelers would be able to see host profiles and their reviews
+
+hosts would be able to see only bio information and pictures
