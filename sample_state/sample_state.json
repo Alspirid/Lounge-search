@@ -1,0 +1,75 @@
+entities: {     
+  users: {   
+    1: {  
+      id: 1,   
+      username: "John1",  
+      age: 45,    
+      email: "john@appacademy.io",   
+      phone: "1234567890",     
+      is_host: false,      
+      location_id: 22323,        
+      about_text: "sdgljlfjgd"    
+    },   
+    2: {  
+      id: 11,   
+      username: "Kent",  
+      age: 23,    
+      email: "kent@appacademy.io",   
+      phone: "1234567890",     
+      is_host: true,      
+      location_id: 344,        
+      about_text: "bla bla"    
+    }, 
+  },  
+  locations: { 
+    2: { 
+      street: "Washington st",  
+      area: "Diablo Heights",  
+      img_url: "http://maxpixel.freegreatpicture.com/static/diablo1.jpg",   
+    },  
+    7: { 
+      street: "Linear st",  
+      area: "Awesome area",  
+      img_url: "https://cdn.pixabay.com/photo",    
+    } 
+  },  
+  bookings: { 
+    1: {    
+      traveler_id: 1,     
+      host_id: 2,      
+      location_id: 344,   
+      arrival: "2/12/2018",    
+      departure: "2/20/2018",   
+    }  
+  },
+  favorites: {
+    1: {
+      id: 1,     
+      username: "John1",    
+      location_id: 13    
+    }
+  }
+  reviews: {
+    1: {
+      user_id: 1,     
+      author_id: 11,  
+      rating: 4,     
+      body: "John is a good guy. He was quite organized and arrived 15 min before time.",    
+    }
+  }
+},
+ui: {
+    loading: true/false
+  },
+  errors: {
+    login: ["Incorrect username/password combination"],
+    chirpForm: ["Chirp body cannot be blank"],
+  },
+  session: {
+    currentUser: {
+      id: 1,
+      username: "John1",
+      img_url: "https://cdn.pixabay.com/photo/2017/12/29/03/47/smile.jpg"
+    }
+  }
+}
