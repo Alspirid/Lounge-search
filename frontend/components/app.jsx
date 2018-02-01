@@ -3,11 +3,12 @@ import { Route, Switch } from 'react-router-dom';
 import SignupContainer from './session/signup_container';
 import MainPage from './home/main.jsx';
 import NavBarContainer from './nav_bar/nav_bar_container';
+import {AuthRoute} from '../utils/route_utils';
 
 export default () => (
   <div>
     <Route path='/' component={NavBarContainer} />
-    <Route path='/signup' component={SignupContainer} />
+    <AuthRoute path='/signup' component={SignupContainer} />
   </div>
   
 );
