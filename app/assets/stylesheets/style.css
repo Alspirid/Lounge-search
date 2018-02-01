@@ -1,0 +1,152 @@
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*border: 1px dotted gray;*/
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    font-size: 22px;
+}
+
+.row {
+    max-width: 1440px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    z-index: 1;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container-menu {
+    max-width: 1440px;
+    display: inline-block;
+    padding: 8px 32px;
+    /* opacity: 0.9; */
+    overflow: hidden;
+    white-space: nowrap;
+    /* border-bottom: 1px solid #ccc; */
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eeeeee+0,a5a5a5+100 */
+    background: rgb(238,238,238); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(238,238,238,1) 0%, rgba(165,165,165,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(238,238,238,1) 0%,rgba(165,165,165,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(238,238,238,1) 0%,rgba(165,165,165,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#a5a5a5',GradientType=0 ); /* IE6-9 */
+}
+
+.logo{
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 45px;
+  min-height: 45px;
+  background-color: #000;
+  font-size: 12px;
+  color: #fff;
+  display: block;
+  padding: 5px;
+}
+
+.menu_text {
+    float: right;
+    display: inline-block;
+    margin-top: 2px;
+    margin-bottom: 6px;
+}
+
+.main-nav {
+    text-align: left;
+    list-style: none;
+    display: inline-block;
+}
+
+.main-nav li {
+    display: inline-block;
+    padding-left: 2em;
+}
+
+.main-nav li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: .6em;
+    font-weight: 400;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+    color: #fff;
+    text-decoration: none;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+background-color: rgb(40, 100, 184);
+  
+}
+
+
+.menu-btn {
+  border-radius: 2px;
+  padding: 8px 22px;
+  background-color: rgb(40, 127, 184);
+  color: #fff;
+}
+
+.main-banner {
+    /* margin-top: -32px; */
+    display: block;
+    /*max-width: 1440px;*/
+    max-height: 600px;
+    /* border: 1px dashed lightpink; */
+    z-index: -1;
+    position: relative;
+    margin-top: 20px;
+
+}
+
+.main-banner .slogan {
+    background-position: center center;
+    background: linear-gradient(
+                     rgba(20,20,20, .5), 
+                     rgba(20,20,20, .5)), 
+                   url(img/splash1.jpg) no-repeat center;
+    /* background: url(img/splash1.jpg) no-repeat center; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 600px;
+    padding-top: 100px;
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: 300;
+  text-align: center;
+  color: #fff;
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+h2 {
+  font-size: 35px;
+  font-weight: 200;
+  text-align: center;
+  color: #fff;
+  margin-top: 0;
+}
