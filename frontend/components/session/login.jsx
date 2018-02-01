@@ -19,13 +19,33 @@ class Login extends React.Component {
   
   handleSubmit(e) {
     e.preventDefault();
-    this.props.login(this.state)
-    .then(()=>this.props.history.push('/'));
+    this.props.login(this.state);
   }
+  
+  componentWillReceiveProps(nextProps) {
+   if (nextProps.currentUser) {
+     this.props.history.push('/');
+   }
+ }
+  
+  renderErrors() {
+    return (
+      <ul>
+        {
+          this.props.errors.map((error,i)=>(
+          <li key={`error=${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+  
   render() {
     return (
       <div>
         <h2>Log In!</h2>
+        {this.renderErrors()}
         <label>Username:
           <input
             type="text"

@@ -22,14 +22,33 @@ class Signup extends React.Component {
   
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createNewUser(this.state)
-      .then(()=>this.props.history.push('/'));
+    this.props.createNewUser(this.state);
   }
+  
+  componentWillReceiveProps(nextProps) {
+   if (nextProps.currentUser) {
+     this.props.history.push('/');
+   }
+ }
+
+ renderErrors() {
+   return (
+     <ul>
+       {
+         this.props.errors.map((error,i)=>(
+         <li key={`error=${i}`}>
+           {error}
+         </li>
+       ))}
+     </ul>
+   );
+ }
   
   render () {
     return (
       <div>
         <h2>Sign Up</h2>
+        {this.renderErrors()}
           <form onSubmit={this.handleSubmit}>
             <label>Username:
               <input type='text' value={this.state.username}
