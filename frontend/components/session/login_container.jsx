@@ -4,9 +4,13 @@ import { login } from '../../actions/session';
 import Login from './login';
 
 
-const mapStateToProps = state => ({
-  errors: state.errors
-});
+const mapStateToProps = state => {
+  if (state.errors){
+    return { errors: state.errors };
+  } else {
+    return {errors: []};
+  }
+};
 
 const mapDispatchToProps = dispatch => ({
   login: formUser => dispatch(login(formUser)),
