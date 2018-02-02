@@ -1,4 +1,3 @@
-// import { connect } from 'react-redux';
 import React from  'react';
 import { NavLink } from 'react-router-dom';
 import MainInternal from './main_internal.js';
@@ -10,11 +9,15 @@ class MainPage extends React.Component {
   
   render() {
     return (
-      <div>
-        <MainInternal />
-        <h2>This should be a main component</h2>
-         <NavLink to='/signup' >Sign Up</NavLink>
+      <div className="row">
+      
+      <div className="main-banner">
+        <div className="slogan">
+          <h1>Stay with Locals and Meet Travelers</h1>
+          <h2>Share Authentic Travel Experiences</h2>
+        </div>
       </div>
+    </div>
     );
   }
   
