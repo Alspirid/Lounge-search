@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import NavBar from './nav_bar';
-import { logout, login, createNewUser } from '../../actions/session';
+import { logout, login, createNewUser, clearErrors } 
+from '../../actions/session';
 
 const mapStateToProps = state => {
   if (state.errors) {
@@ -20,7 +21,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
   login: (user) => dispatch(login(user)),
-  createNewUser: (user) => dispatch(createNewUser(user))
+  createNewUser: (user) => dispatch(createNewUser(user)),
+  clearErrors: () => dispatch(clearErrors())
 });
 
 
