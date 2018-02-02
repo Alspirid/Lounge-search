@@ -48,10 +48,15 @@
 
 .modal-form button {
   -webkit-appearance: none;
-  padding: 10px 20px;
-  border-radius: 3px;
+  text-decoration: none;
+  padding: 10px 22px;
   font-size: 14px;
+  font-weight: 400;
+  border-radius: 3px;
   border: none;
+  background-color: #fff;
+  border: 2px solid #2c2c54;
+  cursor: pointer; 
 }
 
 .modal-form  h1 {

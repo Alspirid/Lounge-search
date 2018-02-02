@@ -22,7 +22,7 @@ const style =
     WebkitOverflowScrolling    : 'touch',
     borderRadius               : '3px',
     outline                    : 'none',
-    padding                    : '20px',
+    padding                    : '15px',
     width: '500px',
     height: '380px',
     margin: 'auto'

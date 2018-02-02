@@ -43,9 +43,11 @@ class NavBar extends React.Component {
  
  demoLogin(e) {
    e.preventDefault();
-   document.getElementById('uname').value = 'bob';
-   document.getElementById('passw').value = 'secret';
-   this.handleSubmit();
+   this.setState({username:'bob'});
+   this.setState({password: 'secret'});
+   setTimeout(()=> {
+     document.getElementById('login').click();
+   },1000);
  }
  
  renderErrors() {
@@ -93,10 +95,8 @@ class NavBar extends React.Component {
               onChange={this.handleInput('password')} />
             </div>
             <div className='submit'>
-              <button onClick={this.demoLogin} 
-                className="inverse-menu-btn">Demo</button>
-              <button className="inverse-menu-btn"
-                onClick={this.handleSubmit}>Log In</button>
+              <button onClick={this.demoLogin}>Demo</button>
+              <button onClick={this.handleSubmit} id='login'>Log In</button>
             </div>  
           </form>
         </Modal>
