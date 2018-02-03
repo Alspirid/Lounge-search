@@ -14,6 +14,6 @@
  *= require_self
  */
  
-@import normalize.css
-@import style.css
-@import modal.css
+@import 'normalize.css';
+@import 'style.css';
+@import 'modal.css';
