@@ -99,7 +99,7 @@ class NavBar extends React.Component {
           ariaHideApp={false} >
           <span onClick={this.closeModal} className="modal-close">&times;</span>
           <form className="modal-form">
-            <h1>Please sign in to continue</h1> <div className='hr'></div>
+            <h1>Please Log in to continue</h1> <div className='hr'></div>
             <div className='input'>
               {this.renderErrors()}
               <input id='uname' placeholder='username'
@@ -179,7 +179,8 @@ class NavBar extends React.Component {
     <header>
       { formType }
       <div className='row'>
-        <div className='container-menu sticky'>
+        <div className='container-menu'>
+          <div className='logo'><h3>Lounge Search</h3></div>
           <div className="menu-text">
             <ul className='main-nav'>
               {display}

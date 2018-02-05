@@ -1,6 +1,9 @@
 import React from  'react';
 import { NavLink } from 'react-router-dom';
-import MainInternal from './main_internal.js';
+import MainInternal from './main_internal';
+import WhyJoin from './why_join';
+import HowItWorks from './how_it_works';
+
 
 class MainPage extends React.Component {
   constructor (props) {
@@ -17,10 +20,12 @@ class MainPage extends React.Component {
           <h2>Share Authentic Travel Experiences</h2>
         </div>
       </div>
+      <WhyJoin />
+      <HowItWorks />
     </div>
+  
     );
   }
-  
 }
 
 

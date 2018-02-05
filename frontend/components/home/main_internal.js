@@ -5,6 +5,4 @@ const MainInternal = (props) => (
 );
   
 
-
-
 export default MainInternal;

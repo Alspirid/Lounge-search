@@ -3,10 +3,19 @@
   <head>
     <title>LoungeSearch</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    
+    <script type="text/javascript">
+      window.staticImages = {
+    	  imageName: "<%= asset_url "splash2.jpg" %>",
+    	  loungeLogo: "<%= asset_url "lounge-logo.png" %>"
+      }
+    </script>
     
     <% if current_user %>
     <script>
