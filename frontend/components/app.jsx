@@ -9,9 +9,9 @@ import DashboardContainer from './dashboard/dashboard_container';
 
 export default () => (
   <div>
-    <AuthRoute path='/' component={NavBarContainer} />
+    <AuthRoute exact path='/' component={NavBarContainer} />
     <Route exact path='/' component={MainPage} />
-    <ProtectRoute path='/' component={NavBarContainer} />
+    <ProtectRoute exact path='/dashboard' component={NavBarContainer} />
     <ProtectRoute exact path='/dashboard' component={DashboardContainer} />
   </div>
   

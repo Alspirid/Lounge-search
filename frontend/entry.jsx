@@ -7,9 +7,9 @@ import * as UserAPI from './utils/user_util';
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const store = configureStore();
+  
   const root = document.getElementById('root');
-  let preloadedState = undefined;
+  let preloadedState = {};
   window.fetchUsers = UserAPI.fetchUsers;
   window.store = store;
   if (window.currentUser) {
@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
   }
-  ReactDOM.render(<Root store={store}/>, root);
+  const store = configureStore(preloadedState);
+  ReactDOM.render(<Root store={store} />, root);
   
 });
  
