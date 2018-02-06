@@ -22,22 +22,27 @@ class Api::UsersController < ApplicationController
   end
   
   def show
-    @user = selected_user
+    @user = User.find(params[:id])
   end  
   
   def index
     @users = User.all
   end  
   
+  def search
+    @users = Users.search(params[:term]).order(:username)
+  end  
+  
   def user_params
-    params.require(:user).permit(:username, 
-                                 :email, 
-                                 :password, 
-                                 :d_birth, 
-                                 :is_host, 
-                                 :location_id, 
-                                 :about_text, 
-                                 :image_url)
+    params.require(:user).permit(
+      :username, 
+      :email, 
+      :password, 
+      :d_birth, 
+      :is_host, 
+      :location_id, 
+      :about_text, 
+      :image_url)
   end
     
 end

@@ -39,6 +39,7 @@ body {
   white-space: nowrap;
   background: #d1ccc0;
   border-bottom: 2px solid #fff;
+  align-items: center;
   
 }
 
@@ -46,6 +47,7 @@ body {
   display: flex;
   justify-content: flex-start;
   width: 30%;
+  align-items: center;
 }
 
 .logo h3 {
@@ -56,44 +58,54 @@ body {
 }
 
 .menu-text {
-    float: right;
     display: flex;
-    justify-content: flex-end;
+    justify-content:flex-end;
     margin-top: 2px;
     margin-bottom: 6px;
     width: 70%;
+    align-items: center;
+    border: 1px dotted pink;
 }
 
-.main-nav {
-    text-align: left;
-    list-style: none;
-    display: inline-block;
+.menu-text-short {
+  justify-content: flex-end;
 }
 
-.main-nav li {
-    display: inline-block;
-    padding-left: 2em;
+.menu-text button {
+  margin-right: 20px;
 }
 
-.main-nav li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: .6em;
-    font-weight: 400;
+.menu-text input {
+  margin-right: 60px;
 }
 
-.main-nav li a:link,
-.main-nav li a:visited {
-    color: #fff;
-    text-decoration: none;
+.menu-item {
+  // -webkit-appearance: none;
+  background-color:  #d1ccc0;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 14px;
+  color: #2c2c54;
+  border: none;
+  letter-spacing: 1px;
+  margin-right: 16px;
 }
 
-.main-nav li a:hover,
-.main-nav li a:active {
-background-color: rgb(40, 100, 184);
-  
+.menu-item:hover {
+  color: #e67e22;
+  cursor: pointer;
 }
 
+.menu-text input {
+    border: 3px solid lightgray;
+    // border-right: none;
+    border-radius: 20px;
+    font-size: 16px;
+    height: 36px;
+    padding: 0 20px;
+    width: 250px;
+    color: #929dad;
+}
 
 .menu-btn {
   text-decoration: none;
@@ -386,4 +398,8 @@ tr td:nth-child(2) {
 tr:last-child td:nth-child(2){
   border-bottom: 1px solid #fff;
   border-radius: 0 0 4px 4px;
+}
+
+.dashboard {
+  margin-top: 120px;
 }
