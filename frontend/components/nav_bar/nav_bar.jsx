@@ -45,9 +45,7 @@ class NavBar extends React.Component {
   
   componentWillReceiveProps(nextProps) {
    if (nextProps.currentUser) {
-     // this.props.history.push('/');
      this.setState({modalIsOpen: false});
-     
    } else {
      this.setState({errors: this.props.errors});
    }
@@ -160,16 +158,19 @@ class NavBar extends React.Component {
   
   render() {
     const display = this.props.currentUser ? (
-      <div>
-        <p className='current-user'>Hello, {this.props.currentUser.username}</p>
-        <button onClick={this.logout} className="menu-btn">Logout</button>
+      <div className="menu-text">
+       <input type="search" value=""
+         placeholder="Start typing..." />
+       <button className="menu-item">Locations</button>  
+       <button className="menu-item">Bookings</button>  
+       <button onClick={this.logout} className="menu-item">Logout</button>
       </div>
     ) : (
-    <div>
-      <li><button onClick={this.openModal('signup')} 
-        className='inverse-menu-btn'>Sign Up</button></li>
-      <li><button onClick={this.openModal('login')} className= 'menu-btn'>
-        Log In</button></li>
+    <div className='menu-text menu-text-short'>
+      <button onClick={this.openModal('signup')} 
+        className='inverse-menu-btn'>Sign Up</button>
+      <button onClick={this.openModal('login')} className= 'menu-btn'>
+        Log In</button>
     </div>
   );
   const formType = this.state.action === 'login' ? 
@@ -180,13 +181,9 @@ class NavBar extends React.Component {
       { formType }
       <div className='row'>
         <div className='container-menu'>
-          <div className='logo'><h3>Lounge Search</h3></div>
-          <div className="menu-text">
-            <ul className='main-nav'>
-              {display}
-          </ul>
+        <div className='logo'><h3>Lounge Search</h3></div>
+          {display}
         </div>
-      </div>
       </div>
     </header>
   );

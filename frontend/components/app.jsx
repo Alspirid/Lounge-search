@@ -5,13 +5,14 @@ import NavBarContainer from './nav_bar/nav_bar_container';
 import { AuthRoute, ProtectRoute } from '../utils/route_utils';
 import LoginContainer from './session/login_container';
 import MainPage from './home/main';
+import DashboardContainer from './dashboard/dashboard_container';
 
 export default () => (
   <div>
-    <Route path='/' component={NavBarContainer} />
-    <MainPage />
-    <AuthRoute path='/signup' component={SignupContainer} />
-    <AuthRoute path='/login' component={LoginContainer} />
+    <AuthRoute path='/' component={NavBarContainer} />
+    <Route exact path='/' component={MainPage} />
+    <ProtectRoute path='/' component={NavBarContainer} />
+    <ProtectRoute exact path='/dashboard' component={DashboardContainer} />
   </div>
   
 );
