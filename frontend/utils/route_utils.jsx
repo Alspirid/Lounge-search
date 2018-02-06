@@ -10,7 +10,7 @@ const mapStateToProps = state => ({
 const Auth = ({loggedIn, path, component: Component}) => (
   <Route path={path}
     render={ props => (
-      loggedIn ? <Redirect to="/" /> : <Component {...props} />
+      loggedIn ? <Redirect to="/dashboard" /> : <Component {...props} />
     )}
   />  
 );
@@ -19,7 +19,7 @@ const Protected = ({loggedIn, path, component: Component}) => (
   <Route
     path={path}
     render={ props => (
-      loggedIn ? <Component {...props} /> : <Redirect to='/signup' />
+      loggedIn ? <Component {...props} /> : <Redirect to='/' />
     )}
   />  
 );
