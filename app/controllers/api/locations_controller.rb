@@ -8,7 +8,28 @@ class Api::LocationsController < ApplicationController
   
   def show
     @location = Location.find(params[:id])
-  end  
+    render :show
+  end
+  
+  def create
+    @location = Location.new(location_params)
+    if @location.save
+      render :show
+    else
+      render json: @location.errors.full_messages, status: 422  
+    end  
+  end
+  
+  def destroy
+    @location = Location.find(params[:id])
+    @location.destroy
+    render :index
+  end
+  
+  def search
+    @locations = Location.search(params[:term]).order(:area)
+    render 'api/location/index'
+  end
 
   private
   

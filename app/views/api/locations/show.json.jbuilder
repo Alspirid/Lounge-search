@@ -1,1 +1,1 @@
-json.partial! location: @location
+json.partial! 'api/locations/location', location: @location
