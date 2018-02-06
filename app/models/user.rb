@@ -1,12 +1,49 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  username        :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  d_birth         :date             not null
+#  is_host         :boolean          default(FALSE)
+#  location_id     :integer          not null
+#  about_text      :text
+#  image_url       :string
+#  email           :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 class User < ApplicationRecord
   validates :username, :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
-
+  validates :username, :email, uniqueness: true
+  
   attr_reader :password
 
-  has_many :locations
-  has_many :bookings
-  has_many :reviews
+  belongs_to :location,
+    primary_key: :id,
+    foreign_key: :location_id,
+    class_name: :Location
+
+  has_many :hostings,
+    primary_key: :id,
+    foreign_key: :host_id,
+    class_name: :Booking
+  
+  has_many :bookings,
+    primary_key: :id,
+    foreign_key: :traveler_id,
+    class_name: :Booking
+    
+  has_many :reviews,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: :Review
+    
+
   
   after_initialize :ensure_session_token
 
