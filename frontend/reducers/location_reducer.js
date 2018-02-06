@@ -13,6 +13,8 @@ import { RECEIVE_LOCATION,
       return merge({}, action.locations);
     case RECEIVE_LOCATION:
       return merge({}, state, {[action.location.id]: action.location});
+    default:
+      return state;
   }
 };
 
