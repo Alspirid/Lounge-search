@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: bookings
+#
+#  id          :integer          not null, primary key
+#  traveler_id :integer          not null
+#  host_id     :integer          not null
+#  accepted    :string           not null
+#  arrival     :datetime
+#  departure   :datetime
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
