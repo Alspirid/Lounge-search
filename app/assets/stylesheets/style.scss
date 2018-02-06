@@ -64,7 +64,6 @@ body {
     margin-bottom: 6px;
     width: 70%;
     align-items: center;
-    border: 1px dotted pink;
 }
 
 .menu-text-short {
@@ -97,7 +96,7 @@ body {
 }
 
 .menu-text input {
-    border: 3px solid lightgray;
+    border: 1px solid #2c2c54;
     // border-right: none;
     border-radius: 20px;
     font-size: 16px;
@@ -401,5 +400,117 @@ tr:last-child td:nth-child(2){
 }
 
 .dashboard {
-  margin-top: 120px;
+  margin-top: 62px;
+  display: flex;
+  // border: 1px dotted blue;
+  justify-content: space-around;
+  padding: 10px;
+  align-items: flex-start;
+}
+
+.dashboard-left {
+  width: 40%;
+  // border: 1px dotted green;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 3px;
+  background-color: #fff;
+  margin-right: 10px;
+}
+
+.dashboard-left img {
+  border-radius: 50%;    
+  width: 200px;
+  height: 200px;  
+}
+.dashboard-left ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 300;
+  border-bottom: 1px solid #ccc;
+  }
+
+.dashboard-left h3 {
+  font-size: 18px;
+  font-weight: 200;
+}
+.dashboard-left h1 {
+  font-size: 20px;
+}
+.dashboard-left h2 {
+  font-size: 18px;
+  font-weight: 400;
+  marigin-top: 16px;
+  padding-top: 10px;
+  text-align: center;
+}
+.dashboard-left p {
+  font-size: 17px;
+  font-weight: 200;
+  font-style: italic;
+  
+}
+.dashboard-left ul {
+  list-style: none;
+}  
+.dashboard-left li {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-bottom: 5px;
+}
+
+.districts {
+  padding: 20px;
+  
+}
+
+.dashboard-background {
+  background-color: #d1ccc0;
+}
+
+.dashboard-right {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  border-radius: 3px;
+}
+
+.dashboard-locations {
+  border: 1px solid #ccc;
+  height: 200px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.dashboard-locations h1, .dashboard-travel-plans h1{ 
+  font-size: 18px;
+  font-weight: 300;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+.dashboard-travel-plans {
+  border: 1px solid #ccc;
+  height: 200px;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.dashboard-item {
+  display: flex;
+  padding: 10px;
+  justify-content: space-around;
+}
+
+.dashboard-item img {
+  height: 100px;
+}
+
+.dashboard-item h2 {
+  font-size: 18px;
+  font-weight: 300;
+  color: #ccc;
 }
