@@ -22,14 +22,13 @@ class LocationIndex extends React.Component {
       display = 'Loading ...';
     }
     return (
-      <div className='locations'>
-        <br/><br/><br/>
-        <h1> Choose your location ...</h1>
-        <div className='locations-index'>
-          <ul>
-            {display}
-          </ul>
-        </div>
+      <div className='row location-background'>
+        <h1 className='location-slogan'> Choose your location ...</h1>
+          <div className='locations'>
+            <ul>
+              {display}
+            </ul>
+          </div>
       </div>
     );
   }

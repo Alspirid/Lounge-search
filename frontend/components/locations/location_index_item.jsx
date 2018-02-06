@@ -6,8 +6,9 @@ const LocationIndexItem = ({location}) => (
     <Link to={`/locations/${location.id}`}>
       <div className='location-index-item-loc'>
         {location.area}
+      </div>  
       <img src={location.image_url}></img>  
-      </div>
+      
     </Link> 
   </li>
 );

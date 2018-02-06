@@ -515,3 +515,70 @@ tr:last-child td:nth-child(2){
   font-weight: 300;
   color: #ccc;
 }
+
+.location-background {
+  margin-top: 63px;
+  background-color: #d1ccc0;
+  
+}
+
+.location-slogan {
+  font-size: 1.6em;
+  font-weight: 300;
+  color: #2c2c54;
+  text-align: center;
+  // margin-top: 200px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #fff;
+}
+
+.locations {
+  padding: 10px;
+  justify-content: space-between;
+  // background-color: #fff;
+}
+
+.locations ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: center;
+  background-color: #d1ccc0;
+}
+
+.locations li {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  border-radius: 3px;
+  padding-bottom: 15px;
+  background-color: #d1ccc0;
+}
+
+.locations li img{
+  max-height: 200px;
+  object-fit: cover;
+  margin: auto;
+  border-radius: 3px;
+}
+
+.location-index-item a, .location-index-item a:active,.location-index-item a:hover {
+  text-decoration: none;
+}
+
+.location-index-item-loc {
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  position: relative;
+  top: 80px;
+  left: 10%;
+  text-shadow: 1px 1px black;
+  z-index: 1;
+  font-weight: 400;
+}
