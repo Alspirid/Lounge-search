@@ -161,7 +161,7 @@ class NavBar extends React.Component {
       <div className="menu-text">
        <input type="search" value=""
          placeholder="Start typing..." />
-       <button className="menu-item">Locations</button>  
+      <Link className="menu-item" to="/locations">Locations</Link>
        <button className="menu-item">Bookings</button>  
        <button onClick={this.logout} className="menu-item">Logout</button>
       </div>
