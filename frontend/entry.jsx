@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   const root = document.getElementById('root');
   let preloadedState = {};
-  window.fetchLocations = fetchLocations;
+  window.fetchLocation = fetchLocation;
   window.store = store;
   if (window.currentUser) {
     preloadedState = {

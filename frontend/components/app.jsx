@@ -7,7 +7,7 @@ import LoginContainer from './session/login_container';
 import MainPage from './home/main';
 import DashboardContainer from './dashboard/dashboard_container';
 import LocationContainer from './locations/location_index_container';
-
+import LocationShowContainer from './locations/location_show_container';
 
 export default () => (
   <div>
@@ -15,8 +15,11 @@ export default () => (
     <Route exact path='/' component={MainPage} />
     <ProtectRoute exact path='/dashboard' component={NavBarContainer} />
     <ProtectRoute exact path='/dashboard' component={DashboardContainer} />
-    <ProtectRoute exact path='/locations' component={NavBarContainer} />
+    <ProtectRoute path='/locations' component={NavBarContainer} />
     <ProtectRoute exact path='/locations' component={LocationContainer} />
+    <ProtectRoute path="/locations/:locationId" 
+      component={LocationShowContainer} />
   </div>
   
 );
+  

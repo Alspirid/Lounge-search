@@ -17,8 +17,7 @@ class NavBar extends React.Component {
      action: '',
      email: '',
      d_birth: '01/01/2018',
-     is_host: false,
-     location_id: 1 
+     is_host: false
    };
    this.openModal = this.openModal.bind(this);
    this.closeModal = this.closeModal.bind(this);
@@ -161,6 +160,7 @@ class NavBar extends React.Component {
       <div className="menu-text">
        <input type="search" value=""
          placeholder="Start typing..." />
+       <Link className="menu-item" to="/dashboard">Dashboard</Link>
       <Link className="menu-item" to="/locations">Locations</Link>
        <button className="menu-item">Bookings</button>  
        <button onClick={this.logout} className="menu-item">Logout</button>
