@@ -105,6 +105,7 @@ body {
     padding: 0 20px;
     width: 250px;
     color: #929dad;
+    background-color: #d1ccc0;
 }
 
 .menu-btn {
@@ -656,4 +657,12 @@ tr:last-child td:nth-child(2){
 
 .host-info {
   padding: 10px;
+}
+
+*:focus {
+    outline: none;
+}
+
+input[type=search]:focus {
+    background-color: #fff;
 }

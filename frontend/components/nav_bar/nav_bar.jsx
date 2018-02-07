@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Modal from 'react-modal';
 import loginStyles from './login_form_styles';
 import signupStyles from './signup_form_styles';
+import SearchContainer from '../search/search_container';
 
 class NavBar extends React.Component {
   
@@ -158,8 +159,8 @@ class NavBar extends React.Component {
   render() {
     const display = this.props.currentUser ? (
       <div className="menu-text">
-       <input type="search" value=""
-         placeholder="Start typing..." />
+      
+       <SearchContainer />
        <Link className="menu-item" to="/dashboard">Dashboard</Link>
       <Link className="menu-item" to="/locations">Locations</Link>
        <button className="menu-item">Bookings</button>  
@@ -193,6 +194,7 @@ class NavBar extends React.Component {
 export default NavBar;
 
 
-
+// <input type="search" value=""
+//   placeholder="Start typing..." />
 
  

@@ -28,4 +28,10 @@ class Location < ApplicationRecord
     through: :hosts,
     source: :hostings
     
+    
+  def self.search(term)
+     Location.where("area ILIKE :term", term: "%#{term}%")
+  end  
+    
+    
 end

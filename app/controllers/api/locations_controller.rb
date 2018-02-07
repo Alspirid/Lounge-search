@@ -28,7 +28,7 @@ class Api::LocationsController < ApplicationController
   
   def search
     @locations = Location.search(params[:term]).order(:area)
-    render 'api/location/index'
+    render 'api/locations/index'
   end
 
   private

@@ -4,13 +4,13 @@ import SignupContainer from './components/session/signup_container';
 import Root from './components/root';
 import configureStore from './store/store';
 import * as UserAPI from './utils/user_util';
-import {fetchLocation, fetchLocations} from './utils/locations_api';
+import {searchLocations} from './utils/locations_api';
 
 document.addEventListener('DOMContentLoaded', () => {
   
   const root = document.getElementById('root');
   let preloadedState = {};
-  window.fetchLocation = fetchLocation;
+  window.searchLocations = searchLocations;
   window.store = store;
   if (window.currentUser) {
     preloadedState = {
