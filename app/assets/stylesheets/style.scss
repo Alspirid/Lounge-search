@@ -527,7 +527,6 @@ tr:last-child td:nth-child(2){
   font-weight: 300;
   color: #2c2c54;
   text-align: center;
-  // margin-top: 200px;
   padding-top: 16px;
   padding-bottom: 16px;
   border-bottom: 1px solid #fff;
@@ -581,4 +580,39 @@ tr:last-child td:nth-child(2){
   text-shadow: 1px 1px black;
   z-index: 1;
   font-weight: 400;
+}
+
+.location-show {
+  margin-top: 63px;
+  position: realative;
+}
+
+.location-show-image {
+  width: 100%;
+  position: relative;
+  height: 200px;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  opacity: .8;
+  z-index: 1;
+}
+
+.location-title {
+  position: absolute;
+  top: 5%;
+  left: 35%;
+  color: #eee;
+  font-size: 3em;
+  font-weight: 300;
+  text-shadow: 1px 1px 5px #ccc;
+  text-transform: uppercase;
+  text-align: center;
+  z-index: 4;
+}
+
+.location-hosts-container {
+  display: flex;
 }
