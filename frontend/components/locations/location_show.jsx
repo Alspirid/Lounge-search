@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import HostItem from './host_item';
 
 class LocationShow extends React.Component {
   
@@ -13,7 +14,10 @@ class LocationShow extends React.Component {
   
   render(){
     let display;
+    let hosts;
     if (this.props.location){
+      hosts = this.props.location.hosts.map(
+        host => (<HostItem key={host.id} host={host}/>));
       display = (
         <div className='row location-background '>
           <div className='location-show-image'>
@@ -22,6 +26,10 @@ class LocationShow extends React.Component {
           <div className='location-show'>
             <h1 className='location-title'>{this.props.location.area}</h1>
           </div>
+          <h1 className='location-slogan'>Available hosts</h1>
+          <ul className='host-list'>
+            {hosts}
+          </ul>
       </div>  
       );
     } else {
@@ -38,3 +46,8 @@ class LocationShow extends React.Component {
 }
 
 export default LocationShow;
+
+
+// {this.props.location.hosts.map(host => (
+//   <HostItem host={host}/>
+// ))}

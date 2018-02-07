@@ -23,8 +23,8 @@ export const fetchLocations = () => dispatch => (
 );
 
 export const fetchLocation = id => dispatch => (
-  APILocation.fetchLocations(id).then( location => ( 
-    dispatch(receiveLocations(location))
+  APILocation.fetchLocation(id).then( location => ( 
+    dispatch(receiveLocation(location))
   ))
 );
 

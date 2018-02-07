@@ -17,7 +17,7 @@ class Dashboard extends React.Component {
   }
   
   render() {
-    console.log(this.props.currentUser);
+    // console.log(this.props.currentUser);
     let display;
     if (this.props.currentUser) {
       this.hostStatus = this.props.currentUser.is_host ? 'Accepting Guests' : 'Not Accepting Guests ';
