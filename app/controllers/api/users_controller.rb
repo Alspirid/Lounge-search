@@ -2,6 +2,9 @@ class Api::UsersController < ApplicationController
   
   def create
     @user = User.new(user_params)
+    location_id = Location.first.id 
+    @user.location_id = location_id 
+    @user.image_url = 'http://www.iconninja.com/files/411/435/758/casual-girl-user-female-avatar-person-icon.svg';
     if @user.save
       login(@user)
       render "/api/users/show"
@@ -40,7 +43,6 @@ class Api::UsersController < ApplicationController
       :password, 
       :d_birth, 
       :is_host, 
-      :location_id, 
       :about_text, 
       :image_url)
   end
