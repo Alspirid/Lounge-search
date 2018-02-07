@@ -29,7 +29,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 9;
   margin-left: auto;
   margin-right: auto;
   max-width: 1440px;
@@ -615,7 +615,9 @@ tr:last-child td:nth-child(2){
   text-shadow: 1px 1px 5px #ccc;
   text-transform: uppercase;
   text-align: center;
-  z-index: 4;
+  z-index: 1;
+  opacity: 0.8;
+  
 }
 
 .location-hosts-container {

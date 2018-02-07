@@ -16,8 +16,12 @@ class LocationShow extends React.Component {
     let display;
     let hosts;
     if (this.props.location){
-      hosts = this.props.location.hosts.map(
-        host => (<HostItem key={host.id} host={host}/>));
+      if (this.props.location.hosts) {
+        hosts = this.props.location.hosts.map(
+          host => (<HostItem key={host.id} host={host}/>));
+      } else {
+        hosts = 'Loading hosts...';
+      }
       display = (
         <div className='row location-background '>
           <div className='location-show-image'>
