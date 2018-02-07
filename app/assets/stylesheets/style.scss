@@ -590,7 +590,7 @@ tr:last-child td:nth-child(2){
 .location-show-image {
   width: 100%;
   position: relative;
-  height: 200px;
+  height: 400px;
   top: 0;
   left: 0;
   overflow: hidden;
@@ -600,11 +600,16 @@ tr:last-child td:nth-child(2){
   z-index: 1;
 }
 
+.location-show-image img{
+  width: 100%;
+  object-fit: cover;
+}
+
 .location-title {
   position: absolute;
   top: 5%;
   left: 35%;
-  color: #eee;
+  color: #2c2c54;
   font-size: 3em;
   font-weight: 300;
   text-shadow: 1px 1px 5px #ccc;
@@ -615,4 +620,38 @@ tr:last-child td:nth-child(2){
 
 .location-hosts-container {
   display: flex;
+}
+
+.host-list {
+  display:flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 10px;
+  width: 100%;
+  // border: 1px dashed red;
+  flex-wrap: wrap;
+  min-width: 400px;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 300;
+}
+.host-list li {
+  background-color: #fff;
+  width: 30%;
+  padding: 10px;
+  display: flex;
+  // border: 1px dashed blue;
+  flex-wrap: wrap;
+  margin: 5px;
+  border-radius: 3px;
+}
+.user-image {
+  height: 150px;
+}
+.user-image img {
+  border-radius: 4px;
+}
+
+.host-info {
+  padding: 10px;
 }
