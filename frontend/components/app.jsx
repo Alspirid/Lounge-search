@@ -9,6 +9,7 @@ import DashboardContainer from './dashboard/dashboard_container';
 import LocationContainer from './locations/location_index_container';
 import LocationShowContainer from './locations/location_show_container';
 import LocationSearchContainer from './search/location_search_container';
+import UserContainer from './users/user_container';
 
 export default () => (
   <div>
@@ -20,6 +21,8 @@ export default () => (
     <ProtectRoute path="/locations/:locationId" 
       component={LocationShowContainer} />
     <ProtectRoute exact path='/search' component={LocationSearchContainer} />
+    <ProtectRoute path="/users/:userId" 
+      component={UserContainer} />
   </div>
   
 );
