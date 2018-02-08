@@ -9,5 +9,6 @@ export default combineReducers({
   session: sessionReducer,
   errors: errorReducer,
   users: userReducer,
-  locations: LocationReducer
+  locations: LocationReducer,
+  reviews: reviewReducer
 });

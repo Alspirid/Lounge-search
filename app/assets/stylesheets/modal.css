@@ -17,7 +17,7 @@
 }
 
 
-.modal-form input {
+.modal-form input, .modal-form textarea {
   -webkit-appearance: none;
   padding: 13px 10px;
   border-radius: 3px;
@@ -47,7 +47,7 @@
   margin-left: 10px;
 }
 
-.modal-form button {
+.modal-form button, input[type="submit"] {
   -webkit-appearance: none;
   text-decoration: none;
   padding: 10px 22px;

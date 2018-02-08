@@ -53,7 +53,7 @@ entities: {
     1: {
       user_id: 1,     
       author_id: 11,  
-      rating: 4,     
+      title: 'Great expirience',     
       body: "John is a good guy. He was quite organized and arrived 15 min before time.",    
     }
   }

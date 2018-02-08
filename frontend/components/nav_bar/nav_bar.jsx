@@ -194,7 +194,4 @@ class NavBar extends React.Component {
 export default NavBar;
 
 
-// <input type="search" value=""
-//   placeholder="Start typing..." />
-
  

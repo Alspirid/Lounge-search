@@ -704,10 +704,11 @@ tr:last-child td:nth-child(2){
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   border-radius: 4px;
   margin-right: 5px;
+  height: 300px;
 }
 .profile-item img{
   width: 150px;
@@ -725,60 +726,64 @@ tr:last-child td:nth-child(2){
 }
 
 .profile-reviews-container {
-  width: 80%;
-  // padding: 10px;
-  border: 1px dashed #fff;
+  width: 40%;
+  padding: 0 10px 10px 10px;
   margin-left: 10px;
+  margin-right: 5px;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .profile-review {
   padding: 10px;
-  width: 50%;
-  border: 1px dashed blue;
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
-}
-
-.profile-booking{
-  padding: 10px;
-  width: 50%;
-  border: 1px dashed violet;
-}
-
-.profile-review h1{
-  font-size: 18px;
-  font-weight: 300;
-  color: #fff;
-  text-align: center;
-}
-
-.profile-review form {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: #2c2c54;
-  justify-content: space-between;
-  // align-items: ;
-  width: 100%;
-  margin: auto;
-  height: 250px;
+  align-items: center;
+  background-color: #fff;
   border-radius: 4px;
-  padding: 15px;
-}
-
-.profile-review form input[text]{
-  display: block;
-  margin: 10px;
-}
-
-.profile-review form textarea{
-  display: block;
-  font-size: 14px;
-  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 300;
   margin-bottom: 10px;
-  flex: 2 0 0;
 }
+
+.profile-review ul{
+  list-style: none;
+}
+.profile-review li {
+  padding: 5px;
+}
+
+.profile-review h1 {
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.profile-review-title{
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.profile-review-body{
+  font-weight: 300;
+  font-style: italic;
+  background-color: #eee;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.profile-review-author {
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.profile-review-form{
+  width: 100%;
+}
+
 
 .profile-details{
   text-decoration: none;
@@ -792,4 +797,18 @@ tr:last-child td:nth-child(2){
   border: 2px solid #2c2c54;
   cursor: pointer; 
   margin-left: 10px;
+}
+
+.profile-booking-container {
+  width:40%;
+  padding: 5px;
+  background-color: #fff;
+  border-radius: 3px;
+}
+
+.profile-booking-container h1 {
+  font-size: 22px;
+  font-weight: 400;
+  text-align: center;
+
 }

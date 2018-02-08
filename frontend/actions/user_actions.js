@@ -4,9 +4,9 @@ export const RECEIVE_USER = 'RECEIVE_USER';
 export const RECEIVE_USERS = 'RECEIVE_USERS';
 
 
-const receiveUser = user => ({
+const receiveUser = payload => ({
   type: RECEIVE_USER,
-  user
+  payload
 });
 
 const receiveUsers = users => ({

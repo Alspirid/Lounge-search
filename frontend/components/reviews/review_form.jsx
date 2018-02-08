@@ -6,7 +6,8 @@ class reviewForm extends React.Component {
   constructor(props){
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.state = {title:'', body:''};
+    this.state = {title:'', body:'', 
+      user_id: this.props.userId, author_id: this.props.authorId};
   }
   
   update(element){
@@ -18,14 +19,16 @@ class reviewForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createReview(this.state);
+    this.setState({title:'', body:''});
   }
   
   
   render() {
     return (  
       <div>
-      <form onSubmit={this.handleSubmit}>
-              <h1>Leave a review</h1>
+      <form className='modal-form' onSubmit={this.handleSubmit}>
+        <h1>Please leave a review</h1>
+        <div className='input'>
         <input type='text' value={this.state.title} 
           onChange={this.update('title')}
           placeholder='Title'/>
@@ -33,7 +36,10 @@ class reviewForm extends React.Component {
           value={this.state.body}
           placeholder='Review body'
           onChange={this.update('body')} />
-        <input type="submit" value='Submit' />
+        <div className='submit'>
+          <input type="submit" value='Submit' />
+        </div>
+        </div>
       </form>
       </div>
     );
