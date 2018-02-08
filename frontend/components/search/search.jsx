@@ -19,7 +19,8 @@ class Search extends React.Component {
     e.preventDefault();
     this.props.searchLocations(this.state.searchTerm).then(
       () => this.props.history.push('/search')
-    ).then(() => this.setState({searchTerm: ''}));
+    );
+    // .then(() => this.setState({searchTerm: ''}));
   }
   
   
@@ -30,7 +31,7 @@ class Search extends React.Component {
         onChange={this.update('searchTerm')}
         onSubmit={this.handleSubmit}
         value={this.state.searchTerm}
-        placeholder="Start typing..." />
+        placeholder="Start typing location..." />
       </form>
     );
   }
