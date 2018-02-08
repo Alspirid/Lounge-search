@@ -7,7 +7,7 @@
 #  user_id     :integer          not null
 #  location_id :integer
 #  body        :text             not null
-#  rating      :integer          not null
+#  title       :string           not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
