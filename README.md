@@ -1,29 +1,9 @@
-# README
+# Lounge search
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+https://lounge-search.herokuapp.com/
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-travelers would be able to see host profiles and their reviews
-
-hosts would be able to see only bio information and pictures
+LoungSearch is a free lodging website for those who want to explore the various spots of San Francisco, 
+with locals who know the area, inspired by CouchSurfing. 
+It utilizes React/Redux frameworks on frontend and Rails/PostgresSQL on backend.
+The whole project was designed and developed within two weeks.
+There are still plenty of new features to be implemented, so I'm planning to continue making improvements in the future.
