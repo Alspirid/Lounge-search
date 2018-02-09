@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
   let preloadedState = {};
   window.searchLocations = searchLocations;
-  window.store = store;
   if (window.currentUser) {
     preloadedState = {
       session: {
@@ -20,6 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
     };
   }
   const store = configureStore(preloadedState);
+  delete window.currentUser;
+  window.store = store;
   ReactDOM.render(<Root store={store} />, root);
   
 });
