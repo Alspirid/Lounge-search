@@ -15,7 +15,7 @@ Location.create!(
   lat: 37.8081269,
   lng: -122.4253858,
   street: 'Beach St',
-  image_url: 'http://www.visitcalifornia.com/sites/default/files/styles/welcome_image/public/VCW_D_SFcity_FishermanWharf_1280x642_sized.jpg'
+  image_url: 'https://www.visitcalifornia.com/sites/default/files/styles/welcome_image/public/VCW_D_SFcity_FishermanWharf_1280x642_sized.jpg'
 )
 Location.create!(
   area: 'Chinatown',
@@ -30,7 +30,7 @@ Location.create!(
   lat: 37.7594039,
   lng: -122.4212456,
   street: 'S Van Ness ave',
-  image_url: 'http://www.sftravel.com/sites/sftraveldev.prod.acquia-sites.com/files/neighborhoods/Mission%20District%20-%20Murals.jpg'
+  image_url: 'https://www.sftravel.com/sites/sftraveldev.prod.acquia-sites.com/files/neighborhoods/Mission%20District%20-%20Murals.jpg'
 )
 Location.create!(
   area: 'Castro',
@@ -45,7 +45,7 @@ Location.create!(
   lat: 37.789019,
   lng: -122.4013602,
   street: 'Market st',
-  image_url: 'http://baycityguide.com/media/00PU000000EkWTuMAN/Financial-District-from-Coit-Tower1500x872.jpg'
+  image_url: 'https://baycityguide.com/media/00PU000000EkWTuMAN/Financial-District-from-Coit-Tower1500x872.jpg'
 )
 
 Location.create!(
@@ -69,7 +69,7 @@ Location.create!(
   lat: 37.7704815,
   lng: -122.4395798,
   street: 'Haight st',
-  image_url: 'http://ww4.hdnux.com/photos/36/66/21/8086647/5/920x920.jpg'
+  image_url: 'https://ww4.hdnux.com/photos/36/66/21/8086647/5/920x920.jpg'
 )
 
 Location.create!(
@@ -77,7 +77,7 @@ Location.create!(
   lat: 37.7835655,
   lng: 122.4147033,
   street: 'Eddy st',
-  image_url: 'http://sfcitizen.com/blog/wp-content/uploads/2013/05/7J7C9263-copy.jpg'
+  image_url: 'https://sfcitizen.com/blog/wp-content/uploads/2013/05/7J7C9263-copy.jpg'
 )
 
 
