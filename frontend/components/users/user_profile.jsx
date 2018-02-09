@@ -25,7 +25,7 @@ class userProfile extends React.Component {
     console.log(this.props);
     if (this.props.reviews.length > 0) {
       reviews = this.props.reviews.map((review,idx) => (
-          <ReviewItem author={this.author.username} key={review.id} review={review}/>
+          <ReviewItem author={review.author_name} key={review.id} review={review}/>
       ));
     }
     if (this.props.user) {
@@ -34,7 +34,9 @@ class userProfile extends React.Component {
             <img src={this.props.user.image_url}></img>
             <h1>{this.props.user.username}</h1>
             <Link to={`/locations/${this.props.user.location.id}`}>
-              <h2>{this.props.user.location.area}</h2></Link>
+              {this.props.user.location.area}</Link>
+            <div className='hr'></div>
+            <p>{this.props.user.about_text}</p>
           </div>
       );
     } else {

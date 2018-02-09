@@ -181,7 +181,7 @@ class NavBar extends React.Component {
       { formType }
       <div className='row'>
         <div className='container-menu'>
-        <div className='logo'><h3>Lounge Search</h3></div>
+        <div className='logo'><Link to='/'>Lounge Search</Link></div>
           {display}
         </div>
       </div>
