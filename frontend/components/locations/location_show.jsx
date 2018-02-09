@@ -30,8 +30,8 @@ class LocationShow extends React.Component {
           <div className='location-show'>
             <h1 className='location-title'>{this.props.location.area}</h1>
           </div>
-          <h1 className='location-slogan'>Available hosts</h1>
-          <ul className='host-list'>
+          <h1 className='host-title'>Available hosts</h1>
+          <ul className='host-list-container'>
             {hosts}
           </ul>
       </div>  

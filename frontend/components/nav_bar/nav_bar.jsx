@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import Modal from 'react-modal';
 import loginStyles from './login_form_styles';
 import signupStyles from './signup_form_styles';
@@ -161,9 +161,8 @@ class NavBar extends React.Component {
       <div className="menu-text">
       
        <SearchContainer />
-       <Link className="menu-item" to="/dashboard">Dashboard</Link>
-      <Link className="menu-item" to="/locations">Locations</Link>
-       <button className="menu-item">Bookings</button>  
+       <NavLink activeClassName='menu-item-active' className="menu-item" to="/dashboard">Dashboard</NavLink>
+      <NavLink activeClassName='menu-item-active' className="menu-item" to="/locations">Locations</NavLink>
        <button onClick={this.logout} className="menu-item">Logout</button>
       </div>
     ) : (

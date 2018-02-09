@@ -8,7 +8,7 @@ const ReviewItem = ({review,author}) => (
     <div className='profile-review-body'>
       {review.body}
     </div>
-    <div className='profile-review-author'>{author}</div>
+    <div className='profile-review-author'>- {author}</div>
   </li>
 );
 

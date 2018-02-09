@@ -6,11 +6,17 @@ import ReviewItem from  '../reviews/review_item';
 class userProfile extends React.Component {
   constructor(props){
     super(props);
-    this.author = window.currentUser.username;
+    this.author = this.props.author;
   }
   componentDidMount() {
     this.props.fetchUser(this.props.userId);
   }
+  
+  componentWillReceiveProps(nextProps){
+    if (this.props.userId !== nextProps.userId ){
+      this.props.fetchUser(nextProps.userId);
+    } 
+ }
   
   render() {
     let display = <div></div>;
@@ -19,7 +25,7 @@ class userProfile extends React.Component {
     console.log(this.props);
     if (this.props.reviews.length > 0) {
       reviews = this.props.reviews.map((review,idx) => (
-          <ReviewItem author={this.author} key={review.id} review={review}/>
+          <ReviewItem author={this.author.username} key={review.id} review={review}/>
       ));
     }
     if (this.props.user) {
@@ -48,7 +54,7 @@ class userProfile extends React.Component {
           </div>
           <div className='profile-review-form'>
             <ReviewFormContainer userId={this.props.userId} 
-              authorId={this.props.authorId}/>
+              authorId={this.props.author.id}/>
           </div>
         </div>
         <div className='profile-booking-container'>

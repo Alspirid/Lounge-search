@@ -26,8 +26,8 @@ class reviewForm extends React.Component {
   render() {
     return (  
       <div>
-      <form className='modal-form' onSubmit={this.handleSubmit}>
-        <h1>Please leave a review</h1>
+      <form className='review-form' onSubmit={this.handleSubmit}>
+        <h1>Please leave a review</h1><div className='hr'></div>
         <div className='input'>
         <input type='text' value={this.state.title} 
           onChange={this.update('title')}
