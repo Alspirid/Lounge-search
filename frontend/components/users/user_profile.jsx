@@ -22,7 +22,7 @@ class userProfile extends React.Component {
     let display = <div></div>;
     let reviews = <div>This user doesn't have any reviews yet.</div>;
     
-    console.log(this.props);
+    // console.log(this.props);
     if (this.props.reviews.length > 0) {
       reviews = this.props.reviews.map((review,idx) => (
           <ReviewItem author={review.author_name} key={review.id} review={review}/>
