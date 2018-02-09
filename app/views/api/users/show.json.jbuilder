@@ -9,7 +9,11 @@ json.reviews do
     json.user_id review.user_id
     json.title review.title
     json.body review.body
-    json.author_name review.author.username
+      if !review.author.nil?
+        json.author_name review.author.username
+      else
+        json.author_name 'noname'
+      end    
   end
 end
 
