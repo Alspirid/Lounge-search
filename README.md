@@ -37,5 +37,9 @@ This function was built using the PostgresSQL.
 ### Dashboard
 
 The dashboard feature is dynamic and it offers the user the different functionality available to Users
- throughout the application. It enables the user to see bio information, see most attractive spots in 
- San Francisco and have access to different menu options available in the top menu.
+ throughout the application. It enables the user to see bio information, view their planned trips, see most attractive spots in San Francisco and have access to different menu options available in the top menu.
+
+![](app/assets/images/lounge-search-dashboard.png)
+
+This is related to various requests to the backend.   
+The dashboard style is optimized and minimalist in a way to not overwhelm the user.  
