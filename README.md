@@ -22,3 +22,13 @@ The results of a search are sorted alphabetically, and separated by area.
 The placement of the feature makes it available throughout the user experience; thus, making it a valuable asset to any LoungeSearcher. 
 
 ![](app/assets/images/lounge-search-1.gif)
+
+This feature builds on its functionality in the show page for a particular neighborhood.  
+As there may be hundreds of hosts in a particular area, it it can be difficult to find someone who meets your distinct needs.  
+
+This was accomplished by building a search function in the backend of the location models.  
+This function was built using the PostgresSQL.
+
+    def self.search(term)
+       Location.where("area ILIKE :term", term: "%#{term}%")
+    end 
