@@ -29,6 +29,13 @@ As there may be hundreds of hosts in a particular area, it it can be difficult t
 This was accomplished by building a search function in the backend of the location models.  
 This function was built using the PostgresSQL.
 
+```ruby
     def self.search(term)
        Location.where("area ILIKE :term", term: "%#{term}%")
     end 
+```    
+### Dashboard
+
+The dashboard feature is dynamic and it offers the user the different functionality available to Users
+ throughout the application. It enables the user to see bio information, see most attractive spots in 
+ San Francisco and have access to different menu options available in the top menu.
