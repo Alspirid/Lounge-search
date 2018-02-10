@@ -8,6 +8,7 @@ const mapStateToProps = (state, ownProps) => {
   let userId;
   let reviews;
   let location;
+  let currentUser;
   const author = state.session.currentUser;
   if (ownProps.match.path === '/users/:userId'){
     userId = ownProps.match.params.userId;
@@ -15,8 +16,9 @@ const mapStateToProps = (state, ownProps) => {
     reviews = Object.values(state.reviews).filter((element)=>{
       return element.user_id == userId;
     });
+    currentUser = state.session.currentUser;
   }
-  return {userId, user, author, reviews};
+  return {userId, user, author, reviews, currentUser};
 };
 
 const mapDispatchToProps = dispatch => ({
