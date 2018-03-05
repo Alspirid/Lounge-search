@@ -7,7 +7,7 @@ Location.create!(
   lat: 37.7990072,
   lng: -122.4836963,
   street: 'Veterans blvd',
-  image_url: 'https://italystorie.files.wordpress.com/2015/01/ggbridge_old_coast_guard_station.jpg'
+  image_url: 'https://res.cloudinary.com/dgent8r3s/image/upload/v1520227342/presidio.jpg'
 )
 
 Location.create!(
@@ -15,14 +15,14 @@ Location.create!(
   lat: 37.8081269,
   lng: -122.4253858,
   street: 'Beach St',
-  image_url: 'https://www.visitcalifornia.com/sites/default/files/styles/welcome_image/public/VCW_D_SFcity_FishermanWharf_1280x642_sized.jpg'
+  image_url: 'https://res.cloudinary.com/dgent8r3s/image/upload/v1520227340/fisherman.jpg'
 )
 Location.create!(
   area: 'Chinatown',
   lat: 37.7940908,
   lng: -122.4093202,
   street: 'Clay st',
-  image_url: 'https://media-cdn.tripadvisor.com/media/photo-s/06/34/72/78/chinatown.jpg'
+  image_url: 'https://res.cloudinary.com/dgent8r3s/image/upload/v1520227353/chinatown.jpg'
 )
 
 Location.create!(
@@ -30,14 +30,14 @@ Location.create!(
   lat: 37.7594039,
   lng: -122.4212456,
   street: 'S Van Ness ave',
-  image_url: 'https://www.sftravel.com/sites/sftraveldev.prod.acquia-sites.com/files/neighborhoods/Mission%20District%20-%20Murals.jpg'
+  image_url: 'https://res.cloudinary.com/dgent8r3s/image/upload/v1520227342/mission.jpg'
 )
 Location.create!(
   area: 'Castro',
   lat: 37.7625414,
   lng: -122.4449224,
   street: 'Castro st',
-  image_url: 'https://hoodwork-production.s3.amazonaws.com/uploads/story/image/8288/castrowide.jpg'
+  image_url: 'https://res.cloudinary.com/dgent8r3s/image/upload/v1520227343/castro.jpg'
 )
 
 Location.create!(
@@ -45,7 +45,7 @@ Location.create!(
   lat: 37.789019,
   lng: -122.4013602,
   street: 'Market st',
-  image_url: 'https://baycityguide.com/media/00PU000000EkWTuMAN/Financial-District-from-Coit-Tower1500x872.jpg'
+  image_url: 'https://res.cloudinary.com/dgent8r3s/image/upload/v1520227340/financial.jpg'
 )
 
 Location.create!(
@@ -53,7 +53,7 @@ Location.create!(
   lat: 37.7519551,
   lng: -122.4936358,
   street: 'Noriega',
-  image_url: 'https://hoodwork-production.s3.amazonaws.com/uploads/story/image/8683/whyisitcalled1.jpg'
+  image_url: 'https://res.cloudinary.com/dgent8r3s/image/upload/v1520227344/sunset.jpg'
 )
   
 Location.create!(
@@ -61,7 +61,7 @@ Location.create!(
   lat: 37.7800557,
   lng: -122.489663,
   street: 'Geary blvd',
-  image_url: 'https://c1.staticflickr.com/7/6156/6171867272_4078bfc827_b.jpg'
+  image_url: 'https://res.cloudinary.com/dgent8r3s/image/upload/v1520227342/richmond.jpg'
 )
 
 Location.create!(
@@ -69,7 +69,7 @@ Location.create!(
   lat: 37.7704815,
   lng: -122.4395798,
   street: 'Haight st',
-  image_url: 'https://ww4.hdnux.com/photos/36/66/21/8086647/5/920x920.jpg'
+  image_url: 'https://res.cloudinary.com/dgent8r3s/image/upload/v1520227343/haight.jpg'
 )
 
 Location.create!(
@@ -77,7 +77,7 @@ Location.create!(
   lat: 37.7835655,
   lng: 122.4147033,
   street: 'Eddy st',
-  image_url: 'https://sfcitizen.com/blog/wp-content/uploads/2013/05/7J7C9263-copy.jpg'
+  image_url: 'https://res.cloudinary.com/dgent8r3s/image/upload/v1520227343/tenderloin.jpg'
 )
 
 
