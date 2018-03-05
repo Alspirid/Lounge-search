@@ -19,16 +19,19 @@ body {
 
 .row {
     max-width: 1440px;
+    min-width: 1440px;
+    width: 1440px;
     display: block;
     margin-right: auto;
     margin-left: auto;
     z-index: 1;
+    border: 1px solid #ccc;
 }
 
 .container-menu {
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 1438px;
   z-index: 9;
   margin-left: auto;
   margin-right: auto;
@@ -37,8 +40,10 @@ body {
   padding: 8px 32px;
   overflow: hidden;
   white-space: nowrap;
-  background: #d1ccc0;
-  border-bottom: 2px solid #fff;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  // border: 1px solid #ccc;
+  border-top: none;
   align-items: center;
   
 }
@@ -78,7 +83,6 @@ body {
 
 .menu-item {
   // -webkit-appearance: none;
-  background-color:  #d1ccc0;
   text-transform: uppercase;
   text-decoration: none;
   font-size: 14px;
@@ -95,7 +99,6 @@ body {
 }
 
 .menu-item-active {
-  background-color:  #d1ccc0;
   text-transform: uppercase;
   text-decoration: none;
   font-size: 14px;
@@ -116,17 +119,16 @@ body {
     padding: 0 20px;
     width: 250px;
     color:#2c2c54;
-    background-color: #d1ccc0;
     font-family: Roboto, sans-serif;
 }
  
  .menu-text input::placeholder {
-   color:#2c2c54;
+   // color:#2c2c54;
    font-family: Roboto, sans-serif;
  }
 .menu-text input:focus {
-   background-color: #2c2c54;
-   color: #fff;
+   // background-color: #2c2c54;
+   // color: #fff;
    font-size: 16px;
    font-weight: 300;
    font-family: Roboto, sans-serif;
@@ -141,12 +143,11 @@ input {
 .menu-btn {
   text-decoration: none;
   font-size: .7em;
-  font-weight: 400;
+  font-weight: 200;
   border-radius: 2px;
   padding: 8px 22px;
   color: #2c2c54;
-  background-color: #d1ccc0;
-  border: 2px solid #2c2c54;
+  border: 1px solid #2c2c54;
   cursor: pointer; 
 }
 
@@ -159,7 +160,7 @@ input {
 .inverse-menu-btn {
   text-decoration: none;
   font-size: .7em;
-  font-weight: 400;
+  font-weight: 200;
   border-radius: 2px;
   padding: 8px 22px;
   background-color:#2c2c54;
@@ -176,43 +177,39 @@ input {
 }
 
 .main-banner {
-    /* margin-top: -32px; */
     display: block;
-    /*max-width: 1440px;*/
     max-height: 600px;
-    /* border: 1px dashed lightpink; */
     z-index: -1;
     position: relative;
-    margin-top: 20px;
-
+    // margin-top: 20px;
 }
 
 .main-banner .slogan {
     background-position: center center;
     background: linear-gradient(
-                     rgba(20,20,20, .5), 
-                     rgba(20,20,20, .5)), 
+                     rgba(20,20,20, .1), 
+                     rgba(20,20,20, .1)), 
                      image_url("splash2.jpg") no-repeat center;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
     height: 600px;
-    padding-top: 100px;
+    padding-top: 1px;
 }
 
 .main-banner .slogan h1 {
   font-size: 70px;
-  font-weight: 300;
+  font-weight: 500;
   text-align: center;
-  color: #fff;
-  margin-top: 20px;
+  color: #c8c6c6;
+  margin-top: 300px;
   margin-bottom: 0;
 }
  .main-banner .slogan h2 {
   font-size: 35px;
-  font-weight: 200;
+  font-weight: 500;
   text-align: center;
-  color: #fff;
+  color: #c8c6c6;
   margin-top: 0;
 }
 
@@ -442,7 +439,7 @@ tr:last-child td:nth-child(2){
 
 .dashboard-left {
   width: 40%;
-  // border: 1px dotted green;
+  border: 1px solid #ccc;
   justify-content: center;
   padding: 20px;
   border-radius: 3px;
@@ -454,7 +451,13 @@ tr:last-child td:nth-child(2){
   border-radius: 50%;    
   width: 200px;
   height: 200px;  
+  padding: 4px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, .2);
 }
+
 .dashboard-left ul {
   display: flex;
   flex-direction: column;
@@ -469,6 +472,7 @@ tr:last-child td:nth-child(2){
 }
 .dashboard-left h1 {
   font-size: 20px;
+  color: #e67e22;
 }
 .dashboard-left h2 {
   font-size: 18px;
@@ -498,7 +502,8 @@ tr:last-child td:nth-child(2){
 }
 
 .dashboard-background {
-  background-color: #d1ccc0;
+  // background-color: #d1ccc0;
+  background-color: #f8f8f9;
 }
 
 .dashboard-right {
@@ -526,7 +531,7 @@ tr:last-child td:nth-child(2){
 }
 .dashboard-travel-plans {
   border: 1px solid #ccc;
-  height: 200px;
+  height: 280px;
   border-radius: 3px;
   background-color: #fff;
 }
@@ -539,6 +544,10 @@ tr:last-child td:nth-child(2){
 
 .dashboard-item img {
   height: 100px;
+  width: 200px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  border-radius: 4px;
 }
 
 .dashboard-item h2 {
@@ -548,9 +557,8 @@ tr:last-child td:nth-child(2){
 }
 
 .location-background {
-  margin-top: 63px;
-  background-color: #d1ccc0;
-  
+  background-color: #f8f8f9;
+  // padding-top: 64px;
 }
 
 .location-slogan {
@@ -560,7 +568,7 @@ tr:last-child td:nth-child(2){
   text-align: center;
   padding-bottom: 16px;
   padding-top: 10px;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #eee;
 }
 
 .host-title {
@@ -586,7 +594,7 @@ tr:last-child td:nth-child(2){
   flex-wrap: wrap;
   margin: auto;
   justify-content: center;
-  background-color: #d1ccc0;
+  background-color: #f8f8f9;
 }
 
 .locations li {
@@ -598,14 +606,17 @@ tr:last-child td:nth-child(2){
   margin: 10px;
   border-radius: 3px;
   padding-bottom: 15px;
-  background-color: #d1ccc0;
+  background-color: #f8f8f9;
 }
 
 .locations li img{
-  max-height: 200px;
   object-fit: cover;
   margin: auto;
   border-radius: 3px;
+  width: 300px;
+  height: 200px;
+  overflow-x: hidden;
+  overflow-y: hidden;  
 }
 
 .location-index-item a, .location-index-item a:active,.location-index-item a:hover {
@@ -621,15 +632,18 @@ tr:last-child td:nth-child(2){
 }
 
 .location-index-item-loc {
-  color: white;
+  color: #2c2c54;
   text-transform: uppercase;
   text-decoration: none;
+  text-align: center;
   position: relative;
-  top: 80px;
-  left: 10%;
-  text-shadow: 1px 1px black;
+  top: 10%;
+  // left: 20%;
+  // text-shadow: 1px 1px black;
   z-index: 1;
   font-weight: 400;
+  font-size: 24px;
+  width: 280px;
 }
 
 .location-show {
@@ -643,16 +657,19 @@ tr:last-child td:nth-child(2){
   height: 400px;
   top: 0;
   left: 0;
-  overflow: hidden;
   overflow-x: hidden;
   overflow-y: hidden;
   opacity: .8;
   z-index: 1;
+
 }
 
 .location-show-image img{
   width: 100%;
   object-fit: cover;
+  position: relative;
+  top: 70%;
+  transform: translateY(-40%);
 }
 
 .location-title {
@@ -695,15 +712,17 @@ tr:last-child td:nth-child(2){
   margin: 5px;
   border-radius: 3px;
   min-width: 370px;
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, .2);
 }
 
 .host-list-item-container {
-  border: 1px solid #ccc;
+  border: 1px solid #eee;
   border-radius: 3px;
   width: 100%;
   height: 100%;
   display: block;
   min-width: 270px;
+  padding: 6px;
 }
 
 .host-list-item{
@@ -717,7 +736,7 @@ tr:last-child td:nth-child(2){
   overflow: hidden;
 }
 .about_text {
-  padding: 15px;
+  padding: 15px 15px 15px 2px;
   font-size: 14px;
   text-align: justify;
 }
@@ -728,7 +747,7 @@ tr:last-child td:nth-child(2){
   height: 120px;
 }
 .user-image img {
-  border-radius: 4px;
+  border-radius: 3px;
   width: 120px;
   height: 120px;
 }
@@ -749,7 +768,7 @@ tr:last-child td:nth-child(2){
 .profile-item {
   width:20%;
   padding: 10px;
-  border: 1px solid #2c2c54;
+  border: 1px solid #ccc;
   background-color: #fff;
   // background-color: #e67e22;
   display: flex;
@@ -765,18 +784,18 @@ tr:last-child td:nth-child(2){
 .profile-item img{
   width: 150px;
   border-radius: 50%;
-  border:1px solid #000;
-  padding: 2px;
-  background-color: #e67e22;
+  padding: 4px;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, .2);
 }
 
 .profile-item h1 {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 300;
   text-align: center;
+  color: #e67e22;
 }
 .profile-item h2 {
   font-size: 16px;
@@ -823,7 +842,7 @@ tr:last-child td:nth-child(2){
   font-size: 16px;
   font-weight: 300;
   margin-bottom: 10px;
-  border: 1px solid #2c2c54;
+  border: 1px solid #ccc;
 }
 
 .profile-review ul{
@@ -891,7 +910,7 @@ tr:last-child td:nth-child(2){
   background-color: #fff;
   border-radius: 3px;
   height: 300px;
-  border: 1px solid #2c2c54;
+  border: 1px solid #ccc;
 }
 
 .profile-booking-container h1 {
@@ -910,7 +929,7 @@ tr:last-child td:nth-child(2){
   z-index: 3;
   border-radius: 4px;
   font-size: 16px;
-  border: 1px solid #2c2c54;
+  border: 1px solid #ccc;
 }
 
 
