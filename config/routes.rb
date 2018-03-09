@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :show, :index]
     resource :session, only: [:create, :destroy, :show]
     resources :locations, only: [:index, :show, :create]
-    # resources :bookings
+    resources :bookings
     resources :reviews, only: [:create, :index, :show, :update, :destroy]
     post 'locations/search', to: 'locations#search'
   end  
