@@ -3,14 +3,20 @@ import ReactDOM from 'react-dom';
 import SignupContainer from './components/session/signup_container';
 import Root from './components/root';
 import configureStore from './store/store';
-import * as UserAPI from './utils/user_util';
-import {searchLocations} from './utils/locations_api';
+
+
+import * as bookingAPI from './utils/booking_util';
 
 document.addEventListener('DOMContentLoaded', () => {
   
   const root = document.getElementById('root');
   let preloadedState = {};
-  window.searchLocations = searchLocations;
+  window.createBooking = bookingAPI.createBooking;
+  window.deleteBooking = bookingAPI.deleteBooking;
+  window.updateBooking = bookingAPI.updateBooking;
+  window.fetchBooking = bookingAPI.fetchBooking;
+  window.fetchBookings = bookingAPI.fetchBookings;
+  
   if (window.currentUser) {
     preloadedState = {
       session: {
