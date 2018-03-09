@@ -6,12 +6,28 @@ class Api::BookingsController < ApplicationController
     if @booking.save
       render :show
     else
-      render json: @booking, status: :unprocessable_entity
+      render json: @booking.errors.full_messages, status: 422
     end    
-  end 
+  end
+  
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    render json: @booking
+  end
+  
+  def update
+    @booking = Booking.find(params[:id])
+    if @booking.update(booking_params)
+      render :show
+    else
+      render json: @booking.errors.full_messages, status: 422
+    end
+  end
   
   def index
-    @bookings = Booking.all
+    @bookings = Booking.all.where(traveler_id: current_user.id)
+    render :index
   end
   
   def show
@@ -26,7 +42,8 @@ class Api::BookingsController < ApplicationController
       :host_id,
       :accepted,
       :arrival,
-      :departure
+      :departure,
+      :description
     )
   end  
   
