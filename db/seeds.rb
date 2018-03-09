@@ -141,13 +141,13 @@ title = [
   "Review for this host"
 ]
 
-170.times do |i|
+175.times do |i|
   user_id = i + 1
-  review_number = Random.new.rand(5)
+  review_number = Random.new.rand(1..5)
   review_number.times do
-    author_id = Random.new.rand(174)
+    author_id = Random.new.rand(1..174)
     body_item = body.shuffle!.first
-    title_item = title.shuffle!.first
+    title_item = title.shuffle!.last
     Review.create!(
       author_id: author_id,
       user_id: user_id,
