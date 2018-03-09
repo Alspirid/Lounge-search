@@ -141,7 +141,7 @@ title = [
   "Review for this host"
 ]
 
-175.times do |i|
+174.times do |i|
   user_id = i + 1
   review_number = Random.new.rand(1..5)
   review_number.times do
