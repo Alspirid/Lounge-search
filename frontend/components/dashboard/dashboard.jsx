@@ -15,10 +15,14 @@ class Dashboard extends React.Component {
   }
   
   render() {
-    // console.log(this.props.currentUser);
     let display;
+    let bookings = [];
+    let hostings = [];
     if (this.props.currentUser) {
       this.hostStatus = this.props.currentUser.is_host ? 'Accepting Guests' : 'Not Accepting Guests ';
+      bookings = this.props.currentUser.bookings;
+      hostings = this.props.currentUser.is_host ? 
+      this.props.currentUser.hostings : [];
       display = (
         <div className='row dashboard-background'>    
         <div className='dashboard'>
