@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ReviewFormContainer from '../reviews/review_form_container';
 import ReviewItem from  '../reviews/review_item';
+import BookingAction from './booking_action';
 
 class userProfile extends React.Component {
   constructor(props){
@@ -62,7 +63,10 @@ class userProfile extends React.Component {
           </div>
         </div>
         <div className='profile-booking-container'>
-          <h1>Bookings</h1>
+          <h1>Request accommodation</h1>
+          <BookingAction traveler_id={this.props.currentUser.id}
+            host_id={this.props.userId} 
+            createBooking={this.props.createBooking}/>
         </div> 
       </div>
       </div>
