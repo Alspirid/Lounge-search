@@ -5,18 +5,12 @@ import Root from './components/root';
 import configureStore from './store/store';
 
 
-import * as bookingAPI from './utils/booking_util';
+
 
 document.addEventListener('DOMContentLoaded', () => {
   
   const root = document.getElementById('root');
-  let preloadedState = {};
-  window.createBooking = bookingAPI.createBooking;
-  window.deleteBooking = bookingAPI.deleteBooking;
-  window.updateBooking = bookingAPI.updateBooking;
-  window.fetchBooking = bookingAPI.fetchBooking;
-  window.fetchBookings = bookingAPI.fetchBookings;
-  
+  let preloadedState = {};  
   if (window.currentUser) {
     preloadedState = {
       session: {
