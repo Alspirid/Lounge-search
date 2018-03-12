@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchUser, fetchUsers} from '../../actions/user_actions';
+import { createBooking } from '../../actions/booking_actions';
 import userProfile from './user_profile';
 
 const mapStateToProps = (state, ownProps) => {
@@ -22,7 +23,8 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchUser: id => dispatch(fetchUser(id))
+  fetchUser: id => dispatch(fetchUser(id)),
+  createBooking: booking => dispatch(createBooking(booking)),
 });
 
 
