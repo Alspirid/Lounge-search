@@ -12,5 +12,5 @@ export default combineReducers({
   users: userReducer,
   locations: LocationReducer,
   reviews: reviewReducer,
-  booking: bookingReducer  
+  bookings: bookingReducer  
 });
