@@ -26,7 +26,9 @@ class Api::BookingsController < ApplicationController
   end
   
   def index
-    @bookings = Booking.all.where(traveler_id: current_user.id).or.where(host_id: current_user.id)
+    # @bookings = Booking.all.where(traveler_id: current_user.id).or.where(host_id: current_user.id)
+    @bookings = Booking.all.where(traveler_id: current_user.id).
+      or(Booking.all.where(host_id: current_user.id))
     render :index
   end
   
