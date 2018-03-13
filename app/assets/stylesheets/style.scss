@@ -445,7 +445,7 @@ input {
   border-radius: 3px;
   background-color: #fff;
   margin-right: 10px;
-  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.2);
+  // box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.2);
 }
 
 .dashboard-left img {
@@ -521,22 +521,30 @@ input {
   margin-bottom: 10px;
   border-radius: 3px;
   background-color: #fff;
-  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.2);
+  // box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.2);
 }
 
-.dashboard-locations h1, .dashboard-travel-plans h1{ 
+.dashboard-locations h1,{ 
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 400;
   text-align: center;
-  border-bottom: 1px solid #ccc;
   padding-bottom: 10px;
 }
+.dashboard-travel-plans h1{ 
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  margin: 10px 0px 0px 0px;
+}
+
+
 .dashboard-travel-plans {
   border: 1px solid #ccc;
-  height: 280px;
+  // height: 280px;
   border-radius: 3px;
   background-color: #fff;
-  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.2);
+  // box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.2);
+  padding: 10px 0px;
 }
 
 .dashboard-item {
@@ -554,11 +562,13 @@ input {
 }
 
 .dashboard-travel-plans h2 {
-  font-size: 18px;
-  font-weight: 300;
-  color: #e67e22;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000b8;
   width: 100%;
-  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
 }
 
 .location-background {
@@ -621,7 +631,8 @@ input {
   width: 300px;
   height: 200px;
   overflow-x: hidden;
-  overflow-y: hidden;  
+  overflow-y: hidden;
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.2);
 }
 
 .location-index-item a, .location-index-item a:active,.location-index-item a:hover {
@@ -1023,45 +1034,58 @@ input {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 15px;
 }
 
 .dashboard-bookings table {
   width: 100%;
-  border: 1px solid #e67e22;
   font-size: 16px;
-  border-collapse: separate;
+  border-collapse: collapse;
   border-spacing: 0;
   border-radius: 4px;
   font-weight: 300;
 }
+.dashboard-bookings tr {
+  padding: 6px;
+  border-bottom: 1px solid #ccc;
+}
 .dashboard-bookings tr td {
   padding: 6px;
   // text-align: center;
+  // border-bottom: 1px solid #ccc;
 }
 
 .dashboard-bookings tr:first-child{
-  background-color: #e67e22;
-  color: #fff;
-  // text-align: center;
+  background-color: #fff;
+  color: #e67e22;
+  font-weight: 400;
+  border-top: 1px solid #e67e22;
+  border-bottom: 1px solid #e67e22;
+  border-radius: 3px;
 }
-.dashboard-bookings tr:nth-child(3) {
-  background-color: #eee;
+.dashboard-bookings tr:first-child td:first-child{
+  // border-radius: 3px 0px 0px 3px;
+  border-left: none;
+}
+.dashboard-bookings td:last-child{
+  border-radius: 0px 3px 3px 0px;
 }
 
-.cancel-booking {
+.cancel-booking, .confirm-booking {
   webkit-appearance: none;
-  background-color: #e67e22;
+  background-color: #000;
   padding: 5px;
   color: #fff;
   border-radius: 3px;
   font-size: 12px;
   font-weight: 300;
-  cursor: pointer;
+  border: 1px solid #000;
+  margin-right: 3px;
+  margin-right: 3px;
 }
 
-.cancel-booking:hover{
-  background-color: #000;
+.cancel-booking:hover, .confirm-booking:hover{
+  color: #e67e22;
+  cursor: pointer;
 }
 
 .reservation {
