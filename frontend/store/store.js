@@ -14,5 +14,6 @@ const middlewares = [thunk];
 export default (preloadedState = {}) => createStore(
   rootReducer, preloadedState,
   // applyMiddleware(...middlewares)
-  applyMiddleware(thunk,logger)
+  applyMiddleware(thunk)
+  // applyMiddleware(thunk,logger)
 );
