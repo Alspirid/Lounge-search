@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Modal from 'react-modal';
+import modalStyles from './modal_styles';
 
 class BookingAction extends React.Component {
   constructor(props){
@@ -14,8 +16,12 @@ class BookingAction extends React.Component {
       departure: this.formatDate(tomorrow),
       accepted: 'pending',
       description: '',
+      modalIsOpen: false,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+    this.cancel = this.cancel.bind(this);
   }
   
   formatDate(d){
@@ -26,20 +32,28 @@ class BookingAction extends React.Component {
     return year + "-" + month + "-" + date;
   }
   
-  componentDidMount() {
-  
-    // this.setState({
-    //   arrival: today,
-    //   departure: tomorrow,
-    //   description: '',
-    // });
+  openModal() { 
+    return (e) => {
+      this.setState({modalIsOpen: true});
+    };
+  }
+
+  closeModal(e) {
+     e.preventDefault();
+     this.props.createBooking(this.state);
+     this.setState({
+       modalIsOpen: false,
+     });
+  }
+  cancel(e) {
+     e.preventDefault();
+     this.setState({modalIsOpen: false});
   }
   
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createBooking(this.state);
     this.setState({
-      description: "",
+      modalIsOpen: true,
     });
   }
   
@@ -47,6 +61,39 @@ class BookingAction extends React.Component {
     return (e) => {
       this.setState({[element]: e.target.value});
     };
+  }
+  
+  modalWindow(){
+    return (
+      <div>
+        <Modal
+          isOpen={this.state.modalIsOpen} 
+          onAfterOpen={this.afterOpenModal}
+          onRequestClose={this.closeModal}
+          style={modalStyles}
+          contentLabel="Booking confirmation"
+          ariaHideApp={false} >
+          <span onClick={this.closeModal} className="modal-close">&times;</span>
+          <div className='confirmation-container'>
+            <h2>Thank you for booking</h2> 
+            <div className='booking-details'>
+              <div className='arrival-departure'>
+              <p><strong>Arrival:</strong> {this.state.arrival}</p> 
+              <p><strong>Departure:</strong> {this.state.departure} </p>
+              </div>
+              <div className='message'>
+                <p><strong>Message to host</strong></p>
+                {this.state.description}
+              </div>
+            </div>  
+            <div className='booking-submit'>
+              <button onClick={this.cancel} id='cancel'>Cancel</button>
+              <button onClick={this.closeModal} id='confirm'>Confirm</button>
+            </div>
+          </div>  
+        </Modal>
+      </div>
+    );
   }
   
   render(){
@@ -80,6 +127,7 @@ class BookingAction extends React.Component {
             <input type="submit" value="Submit" />
           </div>
         </form>
+        { this.modalWindow() }
       </div>
     );
   }
