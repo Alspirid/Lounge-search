@@ -111,6 +111,7 @@ bob_location_id = Location.find_by(area: "Presidio").id
     password: 'secret',
     d_birth: '01/01/1991',
     location_id: bob_location_id,
+    is_host: true,
     image_url: 'https://randomuser.me/api/portraits/men/41.jpg',
     about_text: 'I enjoy exploring new places'
   )
