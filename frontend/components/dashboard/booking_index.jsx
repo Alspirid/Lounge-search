@@ -12,15 +12,12 @@ class BookingIndex extends React.Component {
   }
   
   render() {
-    let display;
+    let displayBooking;
+    let BookingMessage;
     if (this.props.bookings) {
-      let message = this.props.bookings.length > 0 ? "Active bookings" : 
+      BookingMessage = this.props.bookings.length > 0 ? "Bookings:" : 
       "You don't have any plans yet...";
-      display =  (
-        <div className='dashboard-travel-plans'>
-        <h1>My Travel Plans</h1>
-        <h2>{message}</h2>
-      <div className='dashboard-bookings'>
+      displayBooking =  (
       <table> 
           <tbody>
             <tr>
@@ -34,20 +31,25 @@ class BookingIndex extends React.Component {
             </tr>
                 {this.props.bookings.map((booking,index) =>
                   <BookingItem deleteBooking={this.props.deleteBooking} 
-                    index={index} key={booking.id} booking={booking} />
+                    index={index} key={index} booking={booking} />
                 )}
-            </tbody>
-          </table> </div>  
-        </div>
+        </tbody>
+      </table>
       );
     } else {
-      display = 'Loading..';
+      displayBooking = 'Loading..';
     }
     return (
-      <div>{ display }</div>
+        <div>
+        <h1>Bookings and Hostings</h1>
+        <div className='dashboard-bookings'>
+          <h2>{BookingMessage}</h2>
+          { displayBooking }
+        </div>
+      </div>
+
     );
   }
 }
 
 export default BookingIndex;
-          // {this.props.currentUser.bookings};

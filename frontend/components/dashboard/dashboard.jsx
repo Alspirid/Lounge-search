@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import DashboardLocations from './dashboard_locations';
 import DashboardLeft from './dashboard_left';
 import BookingIndex from './booking_index';
+import HostingIndex from './hosting_index';
 
 
 class Dashboard extends React.Component {
@@ -30,8 +31,14 @@ class Dashboard extends React.Component {
           <DashboardLeft currentUser={this.props.currentUser}/>
           <div className='dashboard-right'>
             <DashboardLocations />
-            <BookingIndex deleteBooking={this.props.deleteBooking} 
+            <div className='dashboard-travel-plans'>
+            <BookingIndex deleteBooking={this.props.deleteBooking}
               bookings={this.props.bookings}/>
+            <HostingIndex hostings={this.props.hostings}
+              updateBooking={this.props.updateBooking}
+              deleteBooking={this.props.deleteBooking} 
+            />
+          </div>
           </div>
         </div>
         </div>
@@ -50,3 +57,5 @@ class Dashboard extends React.Component {
 }
 
 export default Dashboard;
+
+//   

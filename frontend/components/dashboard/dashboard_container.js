@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchUser, fetchUsers} from '../../actions/user_actions';
 import Dashboard from './dashboard';
-import { fetchBookings,deleteBooking } from '../../actions/booking_actions';
+import { fetchBookings, deleteBooking, updateBooking } 
+from '../../actions/booking_actions';
 
 const mapStateToProps = state => {
   let currentUserId = state.session.currentUser.id;
@@ -26,6 +27,7 @@ const mapDispatchToProps = dispatch => ({
   fetchUsers: () => dispatch(fetchUsers()),
   fetchBookings: () => dispatch(fetchBookings()),
   deleteBooking: id => dispatch(deleteBooking(id)),
+  updateBooking: booking => dispatch(updateBooking(booking)),
 });
 
-export default connect(mapStateToProps,mapDispatchToProps)(Dashboard);
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
