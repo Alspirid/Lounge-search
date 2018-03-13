@@ -43,8 +43,8 @@ class HostingItem extends React.Component {
       <tr className='booking-item'>
       <td>{this.props.index + 1}</td>
       <td>{this.props.hosting.area}</td>
-      <td><Link to={`users/${this.props.hosting.host_id}`}>
-        {this.props.hosting.host}</Link></td>
+      <td><Link to={`users/${this.props.hosting.traveler_id}`}>
+        traveler</Link></td>
       <td>{(this.props.hosting.arrival).slice(0,10)}</td>
       <td>{(this.props.hosting.departure).slice(0,10)}</td>
       <td>{this.props.hosting.accepted}</td>

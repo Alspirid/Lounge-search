@@ -24,7 +24,7 @@ class HostingIndex extends React.Component {
               <tr>
                 <td>#</td>
                 <td>Location</td>
-                <td>Host</td>
+                <td>Traveler</td>
                 <td>Arrival</td>
                 <td>Departure</td>
                 <td>Status</td>
