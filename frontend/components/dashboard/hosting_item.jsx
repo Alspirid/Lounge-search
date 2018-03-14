@@ -38,7 +38,6 @@ class HostingItem extends React.Component {
   }
   
   render(){
-    console.log(this.props);
     return (
       <tr className='booking-item'>
       <td>{this.props.index + 1}</td>
