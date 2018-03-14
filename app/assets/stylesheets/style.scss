@@ -956,7 +956,6 @@ input {
   flex-direction: column;
 }
 
-
 .review-form input, .review-form textarea {
   -webkit-appearance: none;
   padding: 13px 10px;
@@ -992,6 +991,10 @@ input {
   color: #fff;
   background-color: #2c2c54;
   cursor: pointer; 
+}
+
+.review-form input[type='submit']:hover {
+  color: #e67e22;
 }
 
 .review-form button:hover {
@@ -1151,6 +1154,9 @@ input {
   font-weight: 400;
   font-size: 14px;
 }
+.submit-booking input:hover {
+  color: #e67e22;
+}
 
 .submit-booking input[type='reset'] {
   padding: 8px 14px;
@@ -1216,12 +1222,27 @@ input {
 .booking-submit button {
   margin-left: 15px;
   padding: 8px;
-  background-color: #2c2c54;
   color: #fff;
+  background-color: #2c2c54;
   border-radius: 3px;
   border: none;
   font-family: Roboto, sans-serif;
   font-weight: 400;
   font-size: 14px;
   cursor: pointer;
+}
+.booking-submit button:hover {
+  color: #e67e22;
+}
+
+.my-links {
+  margin-top: 1px;
+  display:flex;
+  justify-content: center;
+  background-color: #ed6504;
+  padding: 16px;
+}
+.my-links a {
+  margin-right: 20px;
+  margin-left: 20px;
 }
