@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import MainInternal from './main_internal';
 import WhyJoin from './why_join';
 import HowItWorks from './how_it_works';
-
+import MyLinks from './my_links';
 
 class MainPage extends React.Component {
   constructor (props) {
@@ -22,6 +22,7 @@ class MainPage extends React.Component {
       </div>
       <WhyJoin />
       <HowItWorks />
+      <MyLinks />
     </div>
   
     );
