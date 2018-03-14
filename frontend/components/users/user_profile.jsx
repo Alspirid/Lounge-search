@@ -20,11 +20,9 @@ class userProfile extends React.Component {
  }
   
   render() {
-    // console.log(this.props);
     let display = <div></div>;
     let reviews = <div>This user doesn't have any reviews yet.</div>;
     
-    // console.log(this.props);
     if (this.props.reviews.length > 0) {
       reviews = this.props.reviews.map((review,idx) => (
           <ReviewItem currentUser={this.props.currentUser} 
