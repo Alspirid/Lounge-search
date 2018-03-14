@@ -18,7 +18,6 @@ class Dashboard extends React.Component {
   
   componentWillReceiveProps(nextProps) {
     // if (nextProps.bookings) {
-    //   console.log(nextProps.bookings);
     // }
   }
   
