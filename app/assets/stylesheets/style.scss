@@ -19,8 +19,6 @@ body {
 
 .row {
     max-width: 1440px;
-    min-width: 1440px;
-    width: 1440px;
     display: block;
     margin-right: auto;
     margin-left: auto;
@@ -244,7 +242,6 @@ input {
   display: flex;
   justify-content: center;
   background-color: #3498db;
-  border-top: 1px solid #fff;
 }
 
 .why-join-slogan h1{
@@ -321,7 +318,6 @@ input {
   text-align: center;
   padding: 20px;
   background-color: #e67e22;
-  border-top: 1px solid #fff;
 }
 
 .how-it-works-slogan h1{
@@ -1235,10 +1231,9 @@ input {
 }
 
 .my-links {
-  margin-top: 1px;
   display:flex;
   justify-content: center;
-  background-color: #ed6504;
+  background: linear-gradient(to bottom, rgb(37, 37, 37), #000000);
   padding: 16px;
 }
 .my-links a {
