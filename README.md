@@ -29,7 +29,7 @@ The search bar in the header section enables users to traverse the application w
 The results of a search are sorted alphabetically, and separated by area.
 The placement of the feature makes it available throughout the user experience; thus, making it a valuable asset to any LoungeSearcher. 
 
-![](app/assets/images/lounge-search-1.gif)
+![](app/assets/images/lounge-search-search.gif)
 
 This feature builds on its functionality in the show page for a particular neighborhood.  
 As there may be hundreds of hosts in a particular area, it it can be difficult to find someone who meets your distinct needs.  
