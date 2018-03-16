@@ -2,18 +2,26 @@
 
 https://lounge-search.herokuapp.com/
 
-LoungSearch is a free lodging website for those who want to explore the various spots of San Francisco, 
-with locals who know the area, inspired by CouchSurfing. 
+Lounge Search is a free lodging website inspired by CouchSurfing. 
+The site was created for travelers who want to explore the various spots of San Francisco, 
+and stay with locals who know the area.
+ 
 It utilizes React/Redux frameworks on frontend and Rails/PostgresSQL on backend.
 The whole project was designed and developed within two weeks.
 There are still plenty of new features to be implemented, so I'm planning to continue making improvements in the future.
 
 ### Features
 * Secure user authentication in both the frontend and the backend using BCrypt.
-* Users can view available locations within San Francisco, CA and identify hosts to related to a specific location.
-* The application dynamically adapts the page view to display all information in a beautiful way.
+* Users can view and available locations within San Francisco, CA and identify hosts related to a specific location.
 * Users can search for locations typing in the search field.
-* Users can create and view reviews for other users.
+* The application dynamically adapts the page view to display all information in a beautiful way.
+* Users can create bookings by requesting hosts for accommodation while hosts have an ability to confirm or deny the request.
+* Users can create reviews for other users and view reviews associated with other users.
+
+### User authentication
+The user authentication is based on BCrypt hashing technology which remains resistant to brute-force search attacks even with increasing computation power. Therefore, there is a assurance to protect users' credentials information even when the log-in session is stored on the browser.
+
+![](app/assets/images/lounge-search-authentication.gif)
 
 ### Search
 
