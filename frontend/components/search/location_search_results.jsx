@@ -7,7 +7,7 @@ class locationSearchResults extends React.Component {
     let message;
     let locationItems;
     if (locations.length > 0){
-      message = 'Location search results';
+      message = '';
       locationItems = locations.map( location =>(
         <LocatonIndexItem key={location.id} location={location} />
       ));
