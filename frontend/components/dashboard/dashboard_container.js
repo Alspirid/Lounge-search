@@ -22,12 +22,12 @@ const mapStateToProps = state => {
 };
 
 
-const mapDispatchToProps = dispatch => ({
-  fetchUser: (id) => dispatch(fetchUser(id)),
-  fetchUsers: () => dispatch(fetchUsers()),
-  fetchBookings: () => dispatch(fetchBookings()),
-  deleteBooking: id => dispatch(deleteBooking(id)),
-  updateBooking: booking => dispatch(updateBooking(booking)),
-});
+  const mapDispatchToProps = dispatch => ({
+    fetchUser: (id) => dispatch(fetchUser(id)),
+    fetchUsers: () => dispatch(fetchUsers()),
+    fetchBookings: () => dispatch(fetchBookings()),
+    deleteBooking: id => dispatch(deleteBooking(id)),
+    updateBooking: booking => dispatch(updateBooking(booking)),
+  });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
