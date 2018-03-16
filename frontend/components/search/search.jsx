@@ -20,7 +20,6 @@ class Search extends React.Component {
     this.props.searchLocations(this.state.searchTerm).then(
       () => this.props.history.push('/search')
     );
-    // .then(() => this.setState({searchTerm: ''}));
   }
   
   
