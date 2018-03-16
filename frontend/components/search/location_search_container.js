@@ -12,4 +12,5 @@ const mapDispatchToProps = dispatch => ({
   searchLocations: searchTerm => dispatch(searchLocations(searchTerm)),
 });
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(locationSearchResults));
+export default withRouter(connect(mapStateToProps, 
+  mapDispatchToProps)(locationSearchResults));
