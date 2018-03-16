@@ -107,7 +107,43 @@ The dashboard feature is dynamic and it offers the user the different functional
 
 ![](app/assets/images/lounge-search-dashboard.png)
 
-This is related to various requests to the backend. The dashboard style is optimized and minimalist in a way to not overwhelm the user.  
+This is related to various requests to the backend:
+
+```javascript
+...
+const mapDispatchToProps = dispatch => ({
+  fetchUser: (id) => dispatch(fetchUser(id)), 
+  fetchBookings: () => dispatch(fetchBookings()),
+  deleteBooking: id => dispatch(deleteBooking(id)),
+  updateBooking: booking => dispatch(updateBooking(booking)),
+});
+...
+```
+One of the complexities was to split backend response related to bookings 
+into two parts: the first bookings only - where current user is represented as a traveller
+the second where current user is represented as a host.
+
+```javascript
+// it was done inside the dashboard React container by filtering
+// Redux state with currentUser.id
+..
+const mapStateToProps = state => {
+  let currentUserId = state.session.currentUser.id;
+  return (
+    {
+      bookings: Object.values(state.bookings).filter(element =>{
+        return element.traveler_id === state.session.currentUser.id;
+      }),
+      hostings: Object.values(state.bookings).filter(element =>{
+        return element.host_id === state.session.currentUser.id;
+      }),
+    }
+  );
+};
+...
+```
+
+The dashboard style is optimized and minimalist in a way to not overwhelm the user.  
 
 ## Project Design
 
@@ -126,7 +162,8 @@ Frontend Redux states are set up in a way such that there are separate reducers 
 ## Possible Future Features/Updates
 
 * User to edit/delete reviews
-* User to create/update/ bookings
+* User to edit their bio and profile
+* User to update/ bookings and check out message submitted for host
 * Styling improvements and optimization across all pages
 * CSS code optimization to follow "DRY" style
 * Add search functionality to search for users
