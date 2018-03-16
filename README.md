@@ -100,7 +100,7 @@ This function was built using the PostgresSQL.
 ...    
 ```    
 ### Dashboard
-
+The dashboard style is optimized and minimalist in a way to not overwhelm the user.  
 The dashboard feature is dynamic and it offers the user the different functionality available to Users
  throughout the application. It enables the user to see bio information, view status of the bookings, 
  confirm or deny accommodation requests from other users, and  see most attractive spots in San Francisco.
@@ -110,14 +110,14 @@ The dashboard feature is dynamic and it offers the user the different functional
 This is related to various requests to the backend:
 
 ```javascript
-...
+..
 const mapDispatchToProps = dispatch => ({
   fetchUser: (id) => dispatch(fetchUser(id)), 
   fetchBookings: () => dispatch(fetchBookings()),
   deleteBooking: id => dispatch(deleteBooking(id)),
   updateBooking: booking => dispatch(updateBooking(booking)),
 });
-...
+..
 ```
 One of the complexities was to split backend response related to bookings 
 into two parts: the first bookings only - where current user is represented as a traveller
@@ -143,7 +143,65 @@ const mapStateToProps = state => {
 ...
 ```
 
-The dashboard style is optimized and minimalist in a way to not overwhelm the user.  
+### Reviews
+Users can create reviews for other users and view reviews associated with other users.
+This feature is intended to show positive and negative feedback related to travelers' experience
+staying with the hosts.
+
+![](app/assets/images/lounge-search-reviews.png)
+
+It was implemented using ActiveRecord association on backend and including all necessary 
+information into user.show payload
+
+```ruby
+# Backend
+...
+class User < ApplicationRecord
+  
+  has_many :reviews,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :Review
+...
+
+```
+```jbuilder
+json.reviews do
+  
+  json.array! @user.reviews do |review|
+    json.id review.id
+    json.user_id review.user_id
+    json.title review.title
+    json.body review.body
+      if !review.author.nil?
+        json.author_name review.author.username
+      else
+        json.author_name 'noname'
+      end    
+  end
+end    
+```  
+
+```javascript
+...
+const mapDispatchToProps = dispatch => ({
+  fetchUser: id => dispatch(fetchUser(id)),
+  createBooking: booking => dispatch(createBooking(booking)),
+});
+...
+```
+
+
+
+```javascript
+..
+const mapDispatchToProps = dispatch => ({
+  fetchUser: id => dispatch(fetchUser(id)),
+  createBooking: booking => dispatch(createBooking(booking)),
+});
+..
+```
+
 
 ## Project Design
 
