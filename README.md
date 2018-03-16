@@ -34,7 +34,57 @@ The placement of the feature makes it available throughout the user experience; 
 This feature builds on its functionality in the show page for a particular neighborhood.  
 As there may be hundreds of hosts in a particular area, it it can be difficult to find someone who meets your distinct needs.  
 
-This was accomplished by building a search function in the backend of the location models.  
+This was accomplished by building few React component on frontend and the search function in the backend of the location models
+
+```javascript
+handleSubmit(e) {
+  e.preventDefault();
+  this.props.searchLocations(this.state.searchTerm).then(
+    () => this.props.history.push('/search')
+  );
+}
+
+
+render() {
+  return (
+    <form onSubmit={this.handleSubmit}>
+    <input type="search" value=""
+      onChange={this.update('searchTerm')}
+      onSubmit={this.handleSubmit}
+      value={this.state.searchTerm}
+      placeholder="Start typing location..." />
+    </form>
+  );
+}
+
+class locationSearchResults extends React.Component {
+  render(){
+    let locations = this.props.locations;
+    let message;
+    let locationItems;
+    if (locations.length > 0){
+      message = '';
+      locationItems = locations.map( location =>(
+        <LocatonIndexItem key={location.id} location={location} />
+      ));
+    } else {
+      message = 'No results found';
+      locationItems = <div></div>;
+    }
+  return(
+    <div className='row location-background'>
+      <h1 className='location-slogan'>{ message }</h1>
+        <div className='locations'>
+          <ul>
+            {locationItems}
+          </ul>
+        </div>
+    </div>
+  );    
+  }
+}
+```
+ 
 This function was built using the PostgresSQL.
 
 ```ruby
