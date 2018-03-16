@@ -34,9 +34,12 @@ The placement of the feature makes it available throughout the user experience; 
 This feature builds on its functionality in the show page for a particular neighborhood.  
 As there may be hundreds of hosts in a particular area, it it can be difficult to find someone who meets your distinct needs.  
 
-This was accomplished by building few React component on frontend and the search function in the backend of the location models
+This was accomplished by building few React components on frontend and the search function in the backend of the location models
 
 ```javascript
+Frontend
+...
+class Search extends React.Component {
 handleSubmit(e) {
   e.preventDefault();
   this.props.searchLocations(this.state.searchTerm).then(
@@ -56,7 +59,8 @@ render() {
     </form>
   );
 }
-
+}
+...
 class locationSearchResults extends React.Component {
   render(){
     let locations = this.props.locations;
@@ -88,9 +92,12 @@ class locationSearchResults extends React.Component {
 This function was built using the PostgresSQL.
 
 ```ruby
+...
+Backend
     def self.search(term)
        Location.where("area ILIKE :term", term: "%#{term}%")
     end 
+...    
 ```    
 ### Dashboard
 
