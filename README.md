@@ -194,7 +194,31 @@ json.reviews do
 end    
 ```  
 
+There was a complexity related to show different reviews for different users. The problem was to update Redux state every time user page is loaded with different user data.
+It was solved in the review reducer by listening to RECEIVE_USER and updating the state with reviews payload:
 
+```javascript
+onst reviewReducer = (state = {}, action) => {
+  Object.freeze(state);
+  let newState = merge({}, state);
+
+  switch(action.type) {
+    case RECEIVE_REVIEWS:
+      return merge({}, action.reviews);
+    case RECEIVE_REVIEW:
+      return merge({}, state, {[action.review.id]: action.review});
+    case REMOVE_REVIEW:
+      newState = merge({}, state);
+      delete newState[action.review.id];
+      return newState;
+      // listening for RECEIVE_USER
+    case RECEIVE_USER:
+        return merge({}, state, action.payload.reviews);  
+    default:
+      return state;
+  }
+};
+```
 
 ## Project Design
 
