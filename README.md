@@ -93,7 +93,7 @@ This function was built using the PostgresSQL.
 
 ```ruby
 ...
-Backend
+# Backend
     def self.search(term)
        Location.where("area ILIKE :term", term: "%#{term}%")
     end 
@@ -102,7 +102,8 @@ Backend
 ### Dashboard
 
 The dashboard feature is dynamic and it offers the user the different functionality available to Users
- throughout the application. It enables the user to see bio information, view their planned trips, see most attractive spots in San Francisco and have access to different menu options available in the top menu.
+ throughout the application. It enables the user to see bio information, view status of the bookings, 
+ confirm or deny accommodation requests from other users, and  see most attractive spots in San Francisco.
 
 ![](app/assets/images/lounge-search-dashboard.png)
 
