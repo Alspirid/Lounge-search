@@ -148,13 +148,22 @@ Users can create reviews for other users and view reviews associated with other 
 This feature is intended to show positive and negative feedback related to travelers' experience
 staying with the hosts.
 
-![](app/assets/images/lounge-search-reviews.png)
+![](app/assets/images/lounge-search-reviews.png
+The review feature was implemented on frontend by fetching user data from the backend
 
-It was implemented using ActiveRecord association on backend and including all necessary 
-information into user.show payload
+```javascript
+..
+const mapDispatchToProps = dispatch => ({
+  fetchUser: id => dispatch(fetchUser(id)),
+});
+..
+```
+
+while on backend user information was complied with review information
+related to every user. It was done using ActiveRecord association.
 
 ```ruby
-# Backend
+# User model on backend
 ...
 class User < ApplicationRecord
   
@@ -165,6 +174,9 @@ class User < ApplicationRecord
 ...
 
 ```
+Then by selecting all necessary fields from review table using Rails json builder
+and returning it to the frontend.
+
 ```jbuilder
 json.reviews do
   
@@ -182,25 +194,6 @@ json.reviews do
 end    
 ```  
 
-```javascript
-...
-const mapDispatchToProps = dispatch => ({
-  fetchUser: id => dispatch(fetchUser(id)),
-  createBooking: booking => dispatch(createBooking(booking)),
-});
-...
-```
-
-
-
-```javascript
-..
-const mapDispatchToProps = dispatch => ({
-  fetchUser: id => dispatch(fetchUser(id)),
-  createBooking: booking => dispatch(createBooking(booking)),
-});
-..
-```
 
 
 ## Project Design
