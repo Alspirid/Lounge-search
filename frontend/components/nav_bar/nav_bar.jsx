@@ -5,6 +5,7 @@ import loginStyles from './login_form_styles';
 import signupStyles from './signup_form_styles';
 import SearchContainer from '../search/search_container';
 
+
 class NavBar extends React.Component {
   
   constructor(props){
@@ -53,11 +54,25 @@ class NavBar extends React.Component {
  
  demoLogin(e) {
    e.preventDefault();
-   this.setState({username:'bob'});
-   this.setState({password: 'secret'});
+   const login = 'bob'.split('');
+   const password = 'secret'.split('');
+   let str1 = '';
+   let str2 = '';
+   for (let i = 0; i < login.length; i++) {
+     setTimeout( () => {
+      str1 += login[i];  
+     this.setState({username:str1});
+    },150 * i);
+   } 
+   for (let j = 0; j < password.length; j++) {
+     setTimeout( () => {
+      str2 += password[j];  
+     this.setState({password:str2});
+   },200 * (j+1));
+   } 
    setTimeout(()=> {
      document.getElementById('login').click();
-   },100);
+   },2000);
  }
  
  renderErrors() {
