@@ -54,25 +54,30 @@ class NavBar extends React.Component {
  
  demoLogin(e) {
    e.preventDefault();
-   const login = 'bob'.split('');
-   const password = 'secret'.split('');
-   let str1 = '';
-   let str2 = '';
-   for (let i = 0; i < login.length; i++) {
-     setTimeout( () => {
-      str1 += login[i];  
-     this.setState({username:str1});
-    },150 * i);
-   } 
-   for (let j = 0; j < password.length; j++) {
-     setTimeout( () => {
-      str2 += password[j];  
-     this.setState({password:str2});
-   },200 * (j+1));
-   } 
-   setTimeout(()=> {
-     document.getElementById('login').click();
-   },2000);
+   new Promise((resolve, reject) => {
+     const login = 'bob'.split('');
+     const password = 'secret'.split('');
+     let str1 = '';
+     let str2 = '';
+     for (let i = 0; i < login.length; i++) {
+       setTimeout( () => {
+        str1 += login[i];  
+       this.setState({username:str1});
+      },150 * i);
+     } 
+     for (let j = 0; j < password.length; j++) {
+       setTimeout( () => {
+        str2 += password[j];  
+       this.setState({password:str2});
+       if (j === password.length-1) {
+          resolve('Typing is finished');
+        }
+     },200 * (j+1));
+    }
+  })
+  .then((result) => {
+    document.getElementById('login').click();
+  });
  }
  
  renderErrors() {
