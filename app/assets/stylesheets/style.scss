@@ -29,11 +29,11 @@ body {
 .container-menu {
   position: fixed;
   top: 0;
-  width: 1438px;
+  width: 99%;
   z-index: 9;
   margin-left: auto;
   margin-right: auto;
-  max-width: 1440px;
+  max-width: 1438px;
   display: flex;
   padding: 8px 32px;
   overflow: hidden;
@@ -74,13 +74,12 @@ body {
   justify-content: flex-end;
 }
 
-.menu-text button {
+.menu-text button:first-child {
   margin-right: 20px;
 }
 
 
 .menu-item {
-  // -webkit-appearance: none;
   text-transform: uppercase;
   text-decoration: none;
   font-size: 14px;
@@ -145,6 +144,7 @@ input {
   border-radius: 2px;
   padding: 8px 22px;
   color: #2c2c54;
+  background-color: #fff;
   border: 1px solid #2c2c54;
   cursor: pointer; 
 }
