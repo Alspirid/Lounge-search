@@ -205,6 +205,7 @@ input {
   color: #c8c6c6;
   margin-top: 300px;
   margin-bottom: 0;
+  text-shadow: 1px 1px #201701;
 }
  .main-banner .slogan h2 {
   font-size: 35px;
@@ -212,6 +213,7 @@ input {
   text-align: center;
   color: #c8c6c6;
   margin-top: 0;
+  text-shadow: 1px 1px #201701;
 }
 
 .current-user {
@@ -256,7 +258,7 @@ input {
 }
 
 .why-join-item {
-  padding: 25px;
+  padding: 10px;
   // border: 1px solid #fff;
   background-color: #2980b9;
   border-radius: 3px;
@@ -1243,4 +1245,59 @@ input {
 .my-links a {
   margin-right: 20px;
   margin-left: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .why-join, .how-it-works {
+    flex-direction: column;
+  }
+  .why-join-item, .how-it-works-item {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  .menu-btn, .inverse-menu-btn  {
+    font-size: 12px;
+    font-weight: 100;
+    padding: 4px 12px;
+  }
+  .container-menu {
+    padding: 2px 4px;
+  }
+  .logo a {
+    padding: 0 !important;
+  }
+  .main-banner .slogan {
+    width: 100%;
+    height: 400px;
+  }
+  
+  .main-banner .slogan h1 {
+    margin-top: 150px;
+    font-size: 45px;
+  }
+}
+
+
+@media only screen and (max-width: 400px) {
+  .main-banner .slogan h1 {
+    margin-top: 200px;
+    font-size: 35px;
+  }
+  .main-banner .slogan h2 {
+    font-size: 20px;
+  }
+}
+
+
+@media only screen and (max-width: 330px) {
+  .logo a {
+    font-size: 80%;
+  }
+  .main-banner .slogan h1 {
+    margin-top: 200px;
+    font-size: 35px;
+  }
+  .main-banner .slogan h2 {
+    font-size: 20px;
+  }
 }
