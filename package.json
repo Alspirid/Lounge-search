@@ -2,9 +2,9 @@
   "name": "lounge-search",
   "private": true,
   "dependencies": {
-    "babel-core": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "date-util": "^1.2.1",
     "react": "^16.2.0",
@@ -14,10 +14,11 @@
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
-    "webpack": "^3.10.0"
+    "webpack": "^3.12.0"
   },
   "devDependencies": {
-    "redux-logger": "^3.0.6"
+    "redux-logger": "^3.0.6",
+    "webpack-cli": "^2.1.4"
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
@@ -30,7 +31,8 @@
     "npm": "3.10.10"
   },
   "scripts": {
-    "postinstall": "webpack"
+    "postinstall": "webpack",
+    "webpack": "webpack -w"
   },
   "repository": {
     "type": "git",
