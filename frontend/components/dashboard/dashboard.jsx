@@ -14,6 +14,7 @@ class Dashboard extends React.Component {
   componentDidMount() {
     this.props.fetchUser(this.props.currentUserId);
     this.props.fetchBookings();
+    this.props.fetchLocations();
   }
   
   componentWillReceiveProps(nextProps) {
@@ -22,6 +23,10 @@ class Dashboard extends React.Component {
   }
   
   render() {
+    let locations;
+    if (this.props.locations) {
+      locations = this.props.locations;
+    }
     let display;
     if (this.props.currentUser) {
       display = (
@@ -29,7 +34,6 @@ class Dashboard extends React.Component {
         <div className='dashboard'>
           <DashboardLeft currentUser={this.props.currentUser}/>
           <div className='dashboard-right'>
-            <DashboardLocations />
             <div className='dashboard-travel-plans'>
             <BookingIndex deleteBooking={this.props.deleteBooking}
               bookings={this.props.bookings}/>
@@ -37,9 +41,10 @@ class Dashboard extends React.Component {
               updateBooking={this.props.updateBooking}
               deleteBooking={this.props.deleteBooking} 
             />
-          </div>
-          </div>
+            </div>
+          </div>          
         </div>
+        <DashboardLocations locations={locations}/>          
         </div>
       );
     } else {

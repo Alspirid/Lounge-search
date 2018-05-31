@@ -4,6 +4,7 @@ import { fetchUser, fetchUsers} from '../../actions/user_actions';
 import Dashboard from './dashboard';
 import { fetchBookings, deleteBooking, updateBooking } 
 from '../../actions/booking_actions';
+import { fetchLocations } from '../../actions/location_actions';
 
 const mapStateToProps = state => {
   let currentUserId = state.session.currentUser.id;
@@ -17,6 +18,7 @@ const mapStateToProps = state => {
       hostings: Object.values(state.bookings).filter(element =>{
         return element.host_id === state.session.currentUser.id;
       }),
+      locations: Object.values(state.locations),
     }
   );
 };
@@ -28,6 +30,7 @@ const mapStateToProps = state => {
     fetchBookings: () => dispatch(fetchBookings()),
     deleteBooking: id => dispatch(deleteBooking(id)),
     updateBooking: booking => dispatch(updateBooking(booking)),
+    fetchLocations: () => dispatch(fetchLocations()),
   });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
