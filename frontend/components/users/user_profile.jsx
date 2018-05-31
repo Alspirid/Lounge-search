@@ -31,14 +31,14 @@ class userProfile extends React.Component {
     }
     if (this.props.user) {
       display = (
-          <div className='profile-item'>
-            <img src={this.props.user.image_url}></img>
+          <div className='user-profile'>
+          <img src={this.props.user.image_url}></img>
             <h1>{this.props.user.username}</h1>
             <Link to={`/locations/${this.props.user.location.id}`}>
               {this.props.user.location.area}</Link>
             <div className='hr'></div>
             <p>{this.props.user.about_text}</p>
-          </div>
+          </div>  
       );
     } else {
       display = 'Loading..';
@@ -47,25 +47,28 @@ class userProfile extends React.Component {
     return (
       <div className='row location-background'>
         <div className='profile-container'>
-        { display }
-        <div className='profile-reviews-container'>
-          <div className='profile-review'>
-            <h1>Reviews</h1>
-            <ul>
-            {reviews}
-            </ul>
-          </div>
+          <div className='profile-item'>
+            { display }
+            <div className='profile-review'>
+              <h1>Reviews</h1>
+              <ul>
+              {reviews}
+              </ul>
+            </div>
+          </div>  
+        <div className='profile-reviews-container'>          
           <div className='profile-review-form'>
             <ReviewFormContainer userId={this.props.userId} 
               authorId={this.props.author.id}/>
           </div>
-        </div>
-        <div className='profile-booking-container'>
-          <h1>Request accommodation</h1>
-          <BookingAction traveler_id={this.props.currentUser.id}
-            host_id={this.props.userId} 
-            createBooking={this.props.createBooking}/>
-        </div> 
+          <div className='profile-booking-container'>
+            <h1>Request accommodation</h1>
+            <div className='hr'></div>
+            <BookingAction traveler_id={this.props.currentUser.id}
+              host_id={this.props.userId} 
+              createBooking={this.props.createBooking}/>
+          </div>
+        </div>         
       </div>
       </div>
     );
