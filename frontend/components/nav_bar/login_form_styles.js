@@ -24,11 +24,10 @@ const style =
     outline                    : 'none',
     padding                    : '15px',
     width: '70%',
-    height: '50%',
-    margin: 'auto',
     maxWidth: '500px',
-    MaxHeight: '380px',
- 
+    height: '50%',
+    maxHeight: '400px', 
+    margin: 'auto'
   }
 };
 
