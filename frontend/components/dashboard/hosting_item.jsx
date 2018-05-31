@@ -8,19 +8,27 @@ class HostingItem extends React.Component {
   constructor(props) {
     super(props);
     this.updateBooking = this.props.updateBooking;
-    this.deleteBooking = this.props.deleteBooking;
     this.id = this.props.hosting.id;
+    this.accepted = this.props.hosting.accepted;
+    
+    this.action =  this.accepted === 'pending' || 
+    this.accepted === 'cancelled' ? 'Confirm' : 'Cancel';
+    
+    this.update = this.update.bind(this);
+    this.deny = this.deny.bind(this);
   }
   
-  confirm() {
-    const booking = {
-      id: this.id,
-      accepted: 'confirmed'
-    };
-    return (e) => {
-      this.updateBooking(booking);
-    };
-  }
+  update() {
+      if (this.accepted === 'pending') {
+        this.accepted = 'confirmed';
+      } else if (this.accepted === 'confirmed') {
+        this.accepted = 'cancelled';
+      } else {
+        this.accepted = 'confirmed';
+      }
+      this.updateBooking({id: this.id, accepted: this.accepted});
+    }
+  
   deny() {
     const booking = {
       id: this.id,
@@ -38,6 +46,10 @@ class HostingItem extends React.Component {
   }
   
   render(){
+    this.accepted = this.props.hosting.accepted;    
+    this.action =  this.accepted === 'pending' || 
+    this.accepted === 'cancelled' ? 'Confirm' : 'Cancel';
+    
     return (
       <tr className='booking-item'>
       <td>{this.props.index + 1}</td>
@@ -48,18 +60,14 @@ class HostingItem extends React.Component {
       <td>{(this.props.hosting.departure).slice(0,10)}</td>
       <td>{this.props.hosting.accepted}</td>
       <td>
-        <button onClick={this.confirm()} 
-        className='confirm-booking'>Confirm</button>
-      <button onClick={this.deny()} 
-        className='confirm-booking'>Deny</button>
-      <button onClick={this.delete()} 
-          className='confirm-booking'>Delete</button>
+        <button onClick={this.update} 
+        className='confirm-booking'>{this.action}</button> 
     </td>
     </tr>
     );
   }
 }
-
+  
 
 
 export default HostingItem;
