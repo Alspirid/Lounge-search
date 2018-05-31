@@ -615,12 +615,12 @@ input {
   display: flex;
   flex-wrap: wrap;
   margin: auto;
-  justify-content: center;
+  justify-content: space-around;
   background-color: #f8f8f9;
 }
 
 .locations li {
-  width: 30%;
+  // width: 30%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -697,12 +697,12 @@ input {
 
 .location-title {
   position: absolute;
-  top: 5%;
+  top: 15%;
   left: 35%;
-  color: #2c2c54;
+  color: #fff;
   font-size: 3em;
   font-weight: 300;
-  text-shadow: 1px 1px 5px #ccc;
+  text-shadow: 1px 1px 5px #000;
   text-transform: uppercase;
   text-align: center;
   z-index: 1;
@@ -718,11 +718,11 @@ input {
   display:flex;
   flex-direction: row;
   list-style: none;
-  padding: 10px;
+  // padding: 10px;
   width: 100%;
   flex-wrap: wrap;
-  min-width: 400px;
-  justify-content: space-between;
+  min-width: 320px;
+  justify-content: center;
   font-size: 16px;
   font-weight: 300;
 
@@ -734,7 +734,7 @@ input {
   display: block;
   margin: 5px;
   border-radius: 3px;
-  min-width: 370px;
+  min-width: 310px;
   box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, .2);
 }
 
@@ -1261,8 +1261,25 @@ input {
     width: 185px;
   }
   .dashboard-bookings {
-    width: 100%;
-  }  
+    width: 95%;
+  } 
+  .dashboard-left p {
+    font-size: 14px !important;
+    font-weight: 400;
+  }
+  .dashboard-left h3, .dashboard-left h2 {
+    font-size: 16px;
+  }
+  .location-show-image img {
+    transform: translateY(-55%);
+    top: 50%;
+  }
+  .location-title {
+    top: 15%;
+  }
+  .host-list-container {
+      justify-content: space-around;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -1365,11 +1382,44 @@ input {
     font-size: 12px;
     width: 95%;
   }
-  .menu-text {
-    display: none;
-  }
+
   .dashboard-right {
     margin-top: 10px;
+  }
+  
+  .menu-text form {
+    display: none;
+  }
+  
+  .menu-item {
+    font-size: 10px;
+    margin-right: 5px;
+  }
+
+  
+  .menu-item-active {
+    font-size: 10px;
+    margin-right: 5px;
+  }
+  
+  .location-background {
+    padding-top: 43px;
+  }
+  
+  .location-show-image {
+    height: auto;
+  }
+  
+  .location-show-image img {
+    transform: translateY(0%);
+  }
+  .location-title {
+    top: 10%;
+    left: 10%;
+    font-size: 2em; 
+  }
+  .host-list-container li{
+    width: 100%;
   }
 }
 
@@ -1398,5 +1448,14 @@ input {
     height: auto;
     width: 100%;
     margin: auto;
+  }
+  
+  .location-title {
+    top: 15%;
+    left: 5%;
+    font-size: 2em;
+  }
+  .location-background {
+    padding-top: 38px;
   }
 }
