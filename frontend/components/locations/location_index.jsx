@@ -23,7 +23,6 @@ class LocationIndex extends React.Component {
     }
     return (
       <div className='row location-background'>
-        <h1 className='location-slogan'> Choose your location ...</h1>
           <div className='locations'>
             <ul>
               {display}
