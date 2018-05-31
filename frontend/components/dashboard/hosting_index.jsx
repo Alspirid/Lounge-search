@@ -14,6 +14,7 @@ class HostingIndex extends React.Component {
   render() {
     let HostingMessage;
     let displayHosting;
+    const {updateBooking} = this.props;
     if (this.props.hostings) {
       HostingMessage = this.props.hostings && 
       this.props.hostings.length > 0 ? "Hostings:" : 
@@ -31,9 +32,12 @@ class HostingIndex extends React.Component {
                 <td></td>
               </tr>
                   {this.props.hostings.map((hosting,index) =>
-                    <HostingItem updateBooking={this.props.updateBooking} 
-                      index={index} key={hosting.id} hosting={hosting} 
-                      deleteBooking={ this.props.deleteBooking } />
+                    <HostingItem 
+                      updateBooking={updateBooking} 
+                      index={index} 
+                      key={hosting.id} 
+                      hosting={hosting}                       
+                      />
                   )}
           </tbody>
         </table>
