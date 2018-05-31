@@ -23,10 +23,11 @@ const style =
     borderRadius               : '3px',
     outline                    : 'none',
     padding                    : '15px',
-    width: '500px',
-    height: '380px',
-    margin: 'auto'
-    
+    width: '70%',
+    height: '50%',
+    margin: 'auto',
+    maxWidth: '500px',
+    MaxHeight: '380px',
  
   }
 };
