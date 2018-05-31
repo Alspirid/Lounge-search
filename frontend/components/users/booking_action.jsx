@@ -78,8 +78,8 @@ class BookingAction extends React.Component {
             <h2>Thank you for booking</h2> 
             <div className='booking-details'>
               <div className='arrival-departure'>
-              <p><strong>Arrival:</strong> {this.state.arrival}</p> 
-              <p><strong>Departure:</strong> {this.state.departure} </p>
+              <p><strong>Arrival:</strong><br/> {this.state.arrival}</p> 
+              <p><strong>Departure:</strong><br/>{this.state.departure} </p>
               </div>
               <div className='message'>
                 <p><strong>Message to host</strong></p>
@@ -117,7 +117,7 @@ class BookingAction extends React.Component {
           </label>
           </div>
           <div className='host-message'>
-            <textarea placeholder="Message for host" 
+            <textarea placeholder="Message for this host" 
               value={this.state.description}
               onChange={this.update('description')}
                />
