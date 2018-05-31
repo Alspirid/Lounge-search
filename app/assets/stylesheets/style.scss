@@ -393,7 +393,7 @@ input {
 }
 
 .table-options td {
-  padding: 2%;
+  padding: 3%;
   // padding: 14px;
   text-align: center;  
 }
@@ -435,13 +435,14 @@ input {
   margin-top: 62px;
   display: flex;
   // border: 1px dotted blue;
-  justify-content: space-around;
-  padding: 10px;
-  align-items: flex-start;
+  justify-content: space-between;
+  align-items:  flex-start;
+  margin-bottom: 10px;
+  align-content: stretch;
 }
 
 .dashboard-left {
-  width: 40%;
+  width: 30%;
   border: 1px solid #ccc;
   justify-content: center;
   padding: 20px;
@@ -508,10 +509,11 @@ input {
 .dashboard-background {
   // background-color: #d1ccc0;
   background-color: #f8f8f9;
+  padding: 10px;
 }
 
 .dashboard-right {
-  width: 60%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   padding: 0;
@@ -520,7 +522,7 @@ input {
 
 .dashboard-locations {
   border: 1px solid #ccc;
-  height: 200px;
+  // height: 200px;
   margin-bottom: 10px;
   border-radius: 3px;
   background-color: #fff;
@@ -529,9 +531,11 @@ input {
 
 .dashboard-locations h1,{ 
   font-size: 18px;
+  color: #e67e22;
   font-weight: 400;
   text-align: center;
   padding-bottom: 10px;
+  margin-top: 15px;
 }
 .dashboard-travel-plans h1{ 
   font-size: 18px;
@@ -543,22 +547,24 @@ input {
 
 .dashboard-travel-plans {
   border: 1px solid #ccc;
-  // height: 280px;
+  height: 470px;
   border-radius: 3px;
   background-color: #fff;
   // box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.2);
-  padding: 10px 0px;
+  padding: 0;
+  overflow: scroll;
 }
 
 .dashboard-item {
   display: flex;
+  flex-wrap: wrap;
   padding: 10px;
   justify-content: space-around;
 }
 
 .dashboard-item img {
   height: 100px;
-  width: 200px;
+  width: 150px;
   overflow-x: hidden;
   overflow-y: hidden;
   border-radius: 4px;
@@ -1031,13 +1037,15 @@ input {
 }
 
 .dashboard-bookings {
-  width: 100%;
-  padding-left: 10px; 
-  padding-right: 10px; 
+  width: 80%;
+  padding-left: 2px; 
+  padding-right: 2px; 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  align-content: center;
+  margin: auto;
 }
 
 .dashboard-bookings table {
@@ -1247,6 +1255,16 @@ input {
   margin-left: 20px;
 }
 
+@media only screen and (max-width: 800px) {
+  .menu-text input {
+    margin-right: 5px;
+    width: 185px;
+  }
+  .dashboard-bookings {
+    width: 100%;
+  }  
+}
+
 @media only screen and (max-width: 600px) {
   .why-join, .how-it-works {
     flex-direction: column;
@@ -1275,16 +1293,83 @@ input {
     margin-top: 150px;
     font-size: 45px;
   }
+  
+  .modal-form {
+    padding: 15px;
+  }
+  
+  .modal-form  h1 {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  .modal-form .input {
+    margin-top: 20px;
+  }
+  .modal-form input {
+    padding: 6px 6px;
+  }
+  
+  .modal-form button {
+    padding: 6px 8px;
+  }
+  
+  .dashboard-bookings table {
+    font-size: 12px;
+  }
+  .dashboard-bookings tr {
+    padding: 2px;
+  }
+  .dashboard-bookings tr td {
+    padding: 2px;
+  }
+  .table-options table {
+    width: 90%;
+  }
+  
+  .dashboard {
+    flex-direction: column;
+  }
+  .dashboard-left {
+    width: 100%;
+  }
+  .dashboard-right {
+    width: 100%;
+  }
+  .dashboard-background {
+    padding: 0;
+  }
 }
 
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 415px) {
   .main-banner .slogan h1 {
     margin-top: 200px;
     font-size: 35px;
   }
   .main-banner .slogan h2 {
     font-size: 20px;
+  }
+  .modal-form  h1 {
+    font-size: 14px;
+    font-weight: 300;
+  }
+  .cancel-booking {
+    padding: 4px;
+    font-size: 11px;
+  }
+  .dashboard-background {
+    padding: 0;
+  }
+  .dashboard-bookings table {
+    font-size: 12px;
+    width: 95%;
+  }
+  .menu-text {
+    display: none;
+  }
+  .dashboard-right {
+    margin-top: 10px;
   }
 }
 
@@ -1299,5 +1384,19 @@ input {
   }
   .main-banner .slogan h2 {
     font-size: 20px;
+  }
+  .dashboard-bookings table {
+    font-size: 11px;
+  }
+  .dashboard-bookings tr {
+    padding: 1px;
+  }
+  .dashboard-bookings tr td {
+    padding: 1px;
+  }
+  .dashboard-item img {
+    height: auto;
+    width: 100%;
+    margin: auto;
   }
 }
