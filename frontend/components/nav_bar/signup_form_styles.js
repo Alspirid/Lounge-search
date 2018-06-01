@@ -23,8 +23,10 @@ const style =
     borderRadius               : '3px',
     outline                    : 'none',
     padding                    : '15px',
-    width: '500px',
-    height: '450px',
+    maxWidth: '500px',
+    width: '70%',
+    height: '60%',
+    maxHeight: '450px',
     margin: 'auto'
     
  

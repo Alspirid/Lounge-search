@@ -1177,9 +1177,10 @@ input {
   color: #e67e22;
 }
 
-.submit-booking input[type='reset'] {
-  padding: 8px 14px;
-}
+// .submit-booking input[type='reset'] {
+//   padding: 8px 14px;
+//   -webkit-appearance: none;
+// }
 
 .confirmation-container {
   padding: 5px;
@@ -1264,6 +1265,147 @@ input {
   margin-right: 20px;
   margin-left: 20px;
 }
+
+.menu-hamb {
+    display: none;
+    position: relative;
+    padding: 10px 0;
+    /*border: 1px dotted blue;*/
+    margin-right: 15px;
+}
+
+.custom-toggle {
+    /*width: 24px;*/
+    /*height: 14px;*/
+    padding-top: 3px;
+    cursor: pointer;
+}
+
+.custom-toggle .bar {
+    background-color: #000;
+    display: block;
+    width: 22px;
+    height: 2px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+
+}
+
+.custom-toggle.x {
+    /*transform: rotate(90deg);*/
+}
+
+.custom-toggle .bar:first-child {
+    -webkit-transform: translateY(-3px);
+    -moz-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    transform: translateY(-3px);
+}
+
+.custom-toggle .bar:nth-child(2) {
+}
+
+.custom-toggle .bar:last-child {
+    -webkit-transform: translateY(+3px);
+    -moz-transform: translateY(+3px);
+    -ms-transform: translateY(+3px);
+    transform: translateY(+3px);
+}
+
+.custom-toggle.x .bar:first-child {
+    -webkit-transform: rotate(-45deg) translateX(+1px);
+    -moz-transform: rotate(-45deg) translateX(+1px);
+    -ms-transform: rotate(-45deg) translateX(+1px);
+}
+
+.custom-toggle.x .bar:nth-child(2) {
+    -webkit-transform: rotate(+405deg) translateY(-3px) translateX(-1px);
+    -moz-transform: rotate(+405deg) translateY(-3px) translateX(-1px);
+    -ms-transform: rotate(+405deg) translateY(-3px) translateX(-1px);
+    transform: rotate(+405deg) translateY(-3px) translateX(-1px);
+}
+
+.custom-toggle.x .bar:last-child {
+    /*transform: matrix(1,0,0,1,0,5);*/
+    display: none;
+
+}
+.custom-menu {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 250px;
+    z-index: 2;
+    background-color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 8px 32px;
+    top: -250px;
+    transition: all 0.5s;
+    opacity: 0.9;
+    transform: translateY(0px);
+    border-bottom: 1px solid #ccc;
+}
+
+.custom-menu-content {
+    position: relative;
+    transition: all 0.5s;
+}
+
+.custom-menu.custom-menu-tucked {
+    transform: translateY(296px);
+}
+
+.custom-menu .menu-block {
+    display: block;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    opacity: 0;
+    transition-timing-function: cubic-bezier(0.42, 0, 1, 1);
+    transition-delay: 0.5s;
+}
+
+.custom-menu .menu-block:first-child {
+    // border-top: 1px solid #E5E5E4;
+}
+
+.menu-block .main-nav li {
+    display: block;
+    padding: 8px 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    color: #2c2c54;
+    border: none;
+    letter-spacing: 1px;
+    margin-right: 16px;
+    font-family: Roboto, sans-serif;
+    background-color: transparent;    
+    border-bottom: 1px solid #eee;  
+}
+ .menu-block .main-nav li a, .menu-block .main-nav li:visited {
+   text-decoration: none;
+   color: #2c2c54;
+ }
+.menu-block .main-nav li:first-child {
+  border-top: 1px solid #eee;  
+}
+.menu-block .main-nav li:last-child {
+  border-top: none;
+}
+.menu-block h6 {
+    display: inline-block;
+}
+
+.custom-menu.custom-menu-tucked .menu-block {
+    opacity: 1;
+}
+
+
+// --------------------------------------------
 
 @media only screen and (max-width: 800px) {
   .menu-text input {
@@ -1379,6 +1521,12 @@ input {
   .dashboard-background {
     padding: 0;
   }
+  .menu-text a, .menu-text button {
+    display: none;
+  }
+  .menu-hamb {
+    display: block;
+  }
 }
 
 
@@ -1394,9 +1542,13 @@ input {
     font-size: 14px;
     font-weight: 300;
   }
-  .cancel-booking {
+  .cancel-booking, .confirm-booking {
     padding: 4px;
     font-size: 11px;
+  }
+  
+  .dashboard {
+    margin-top: 45px;
   }
   .dashboard-background {
     padding: 0;
@@ -1507,6 +1659,10 @@ input {
   .main-banner .slogan h2 {
     font-size: 20px;
   }
+  .dashboard {
+    margin-top: 37px;
+  }
+  
   .dashboard-bookings table {
     font-size: 11px;
   }
@@ -1539,5 +1695,7 @@ input {
     margin-bottom: 5px;
     margin-left: 5px;
   }
-  
+  .custom-menu.custom-menu-tucked {
+      transform: translateY(286px);
+  }
 }
