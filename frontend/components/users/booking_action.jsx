@@ -7,8 +7,8 @@ class BookingAction extends React.Component {
   constructor(props){
     super(props);
     const today = new Date();
-    let tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
+    let tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate()+1);
     this.state = {
       traveler_id: this.props.traveler_id,
       host_id: this.props.host_id,
@@ -25,11 +25,7 @@ class BookingAction extends React.Component {
   }
   
   formatDate(d){
-    const year = d.getFullYear();
-    const month = (d.getUTCMonth() + 1) < 10 ? "0" + 
-    (d.getUTCMonth() + 1) : (date.getUTCMonth() + 1);
-    const date = d.getDate() < 10 ? ("0" + d.getDate()) : d.getDate();
-    return year + "-" + month + "-" + date;
+    return d.toISOString().slice(0,10);
   }
   
   openModal() { 
