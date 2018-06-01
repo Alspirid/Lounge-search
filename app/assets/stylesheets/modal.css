@@ -47,7 +47,7 @@
   margin-left: 10px;
 }
 
-.modal-form button, input[type="submit"] {
+.modal-form button, input[type="submit"], input[type="reset"], {
   -webkit-appearance: none;
   text-decoration: none;
   padding: 10px 22px;
