@@ -18,14 +18,20 @@ class BookingItem extends React.Component {
   }
   
   render(){
+    let arrival = '';
+    let departure = '';
+    if (this.props.booking){
+      arrival = this.props.booking.arrival.slice(5,10);
+      departure = this.props.booking.departure.slice(5,10);
+    }
     return (
       <tr className='booking-item'>
       <td>{this.props.index + 1}</td>
       <td>{this.props.booking.area}</td>
       <td><Link to={`users/${this.props.booking.host_id}`}>
         {this.props.booking.host}</Link></td>
-      <td>{(this.props.booking.arrival).slice(0,10)}</td>
-      <td>{(this.props.booking.departure).slice(0,10)}</td>
+      <td>{arrival}</td>
+      <td>{departure}</td>
       <td>{this.props.booking.accepted}</td>
       <td><button onClick={this.cancel()} 
         className='cancel-booking'>Cancel</button></td>

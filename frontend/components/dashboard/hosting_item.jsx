@@ -46,6 +46,8 @@ class HostingItem extends React.Component {
   }
   
   render(){
+    const arrival = this.props.hosting.arrival.slice(5,10);
+    const departure = this.props.hosting.departure.slice(5,10);
     this.accepted = this.props.hosting.accepted;    
     this.action =  this.accepted === 'pending' || 
     this.accepted === 'cancelled' ? 'Confirm' : 'Cancel';
@@ -56,9 +58,9 @@ class HostingItem extends React.Component {
       <td>{this.props.hosting.area}</td>
       <td><Link to={`users/${this.props.hosting.traveler_id}`}>
         traveler</Link></td>
-      <td>{(this.props.hosting.arrival).slice(0,10)}</td>
-      <td>{(this.props.hosting.departure).slice(0,10)}</td>
-      <td>{this.props.hosting.accepted}</td>
+      <td>{arrival}</td>
+      <td>{departure}</td>
+      <td>{this.accepted}</td>
       <td>
         <button onClick={this.update} 
         className='confirm-booking'>{this.action}</button> 
