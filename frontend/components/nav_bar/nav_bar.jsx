@@ -26,6 +26,7 @@ class NavBar extends React.Component {
    this.handleLogin = this.handleLogin.bind(this);
    this.handleSubmit = this.handleSubmit.bind(this);
    this.demoLogin = this.demoLogin.bind(this);
+   this.toggle = this.toggle.bind(this);
   }
   
   handleInput(type) {
@@ -174,7 +175,12 @@ class NavBar extends React.Component {
     </Modal>
   );
 }
-
+  toggle() {
+      document.getElementById('tuckedMenu').classList
+      .toggle('custom-menu-tucked');
+        document.getElementById('toggle').classList.toggle('x');
+  
+    }
   
   render() {
     const display = this.props.currentUser ? (
@@ -201,14 +207,61 @@ class NavBar extends React.Component {
       { formType }
       <div className='row'>
         <div className='container-menu'>
-        <div className='logo'><Link to='/'>Lounge Search</Link></div>
-          {display}
+        <div className='logo'>
+          <Link to='/'>Lounge Search</Link>
         </div>
+          {display}
+          <HambMenu toggle={this.toggle}/>
+        </div>
+        <CustomMenu {...this.props} 
+          logout={this.logout} 
+          openModal={this.openModal} 
+        />
       </div>
     </header>
   );
   }
 }
+
+class HambMenu extends React.Component{
+  constructor(props){
+    super(props);
+  }
+  render(){    
+    return (
+    <div className="menu-hamb">
+      <div className="custom-toggle" id="toggle" onClick={this.props.toggle}>
+          <s className="bar"></s>
+          <s className="bar"></s>
+          <s className="bar"></s>
+      </div>
+    </div>
+    );
+  }
+}
+
+const CustomMenu = (props) => {
+  const display = props.currentUser ? (
+    <ol className="main-nav">
+      <li><a href="#/dashboard">Dashboard</a></li>
+      <li><a href="#/locations">Locations</a></li>
+      <li onClick={props.logout}>Logout</li>
+    </ol>     
+    ) : (
+  <ol className="main-nav">
+    <li onClick={props.openModal('signup')}>Sign Up</li>
+    <li onClick={props.openModal('login')}>Log In</li>    
+  </ol>
+);
+  return(
+    <div className="row custom-menu" id="tuckedMenu">
+      <div className="menu-block">
+          {display}
+      </div>
+    </div>
+  );
+};
+
 
 export default NavBar;
 
