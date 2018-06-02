@@ -15,10 +15,16 @@ class LocationShow extends React.Component {
   render(){
     let display;
     let hosts;
-    if (this.props.location){
-      if (this.props.location.hosts) {
+    const {location} = this.props;
+    if (location){
+      if (location.hosts) {
         hosts = this.props.location.hosts.map(
-          host => (<HostItem key={host.id} host={host}/>));
+          host => <HostItem
+            key={host.id} 
+            host={host} 
+            redirect={() => this.props.history.push(`/users/${host.id}`)}
+          />
+        );
       } else {
         hosts = 'Loading hosts...';
       }

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const HostItem = ({host}) => (
-  <li>
+const HostItem = ({host,redirect}) => (
+  <li onClick={redirect}>
       <div className='host-list-item-container'>
       <div className='host-list-item'>
         <div className='user-image'>
