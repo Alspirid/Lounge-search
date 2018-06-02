@@ -11,6 +11,7 @@ class userProfile extends React.Component {
   }
   componentDidMount() {
     this.props.fetchUser(this.props.userId);
+    window.scrollTo(0, 0); 
   }
   
   componentWillReceiveProps(nextProps){
